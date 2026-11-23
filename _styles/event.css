@@ -76,5 +76,18 @@
     width: min(100%, 340px);
   }
 }
+.event-title-row {
+  text-align: left;
+}
+
+.event-image {
+  aspect-ratio: 16/9;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--light-gray);
+}
+
+.event-image img[src$="logo.png"] {
+  object-fit: contain;
+}
 
 /*# sourceMappingURL=event.css.map */

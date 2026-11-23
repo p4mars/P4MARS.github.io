@@ -1,3 +1,146 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://p4mars.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://p4mars.github.io/" rel="alternate" type="text/html" /><updated>2026-09-14T10:47:31+00:00</updated><id>https://p4mars.github.io/feed.xml</id><title type="html">P4MARS Lab</title><subtitle>P4MARS is an interdisciplinary research group focused on Perception and AI for Manufacturing, Robotics, and Space.</subtitle><entry><title type="html">Demo Implementation Open-Vocabulary Navigation and Manipulation Based on T-FunS3D</title><link href="https://p4mars.github.io/2026/08/16/TA-tfuns3d-demo.html" rel="alternate" type="text/html" title="Demo Implementation Open-Vocabulary Navigation and Manipulation Based on T-FunS3D" /><published>2026-08-16T00:00:00+00:00</published><updated>2026-09-14T10:45:03+00:00</updated><id>https://p4mars.github.io/2026/08/16/TA-tfuns3d-demo</id><content type="html" xml:base="https://p4mars.github.io/2026/08/16/TA-tfuns3d-demo.html"><![CDATA[]]></content><author><name>jingkun-feng, reza-sabzevari</name></author><category term="ra-position" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Deep Learning for Computer Vision and Robotics</title><link href="https://p4mars.github.io/2026/08/16/ta-dl4cv.html" rel="alternate" type="text/html" title="Deep Learning for Computer Vision and Robotics" /><published>2026-08-16T00:00:00+00:00</published><updated>2026-09-14T10:45:03+00:00</updated><id>https://p4mars.github.io/2026/08/16/ta-dl4cv</id><content type="html" xml:base="https://p4mars.github.io/2026/08/16/ta-dl4cv.html"><![CDATA[]]></content><author><name>jingkun-feng, reza-sabzevari</name></author><category term="ta-position" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Simultaneous Localization and Mapping in Dynamic Environments</title><link href="https://p4mars.github.io/2026/01/04/master-project-dyanmicSLAM.html" rel="alternate" type="text/html" title="Simultaneous Localization and Mapping in Dynamic Environments" /><published>2026-01-04T00:00:00+00:00</published><updated>2026-09-14T10:45:03+00:00</updated><id>https://p4mars.github.io/2026/01/04/master-project-dyanmicSLAM</id><content type="html" xml:base="https://p4mars.github.io/2026/01/04/master-project-dyanmicSLAM.html"><![CDATA[<iframe src="https://autonomousrobots.nl/assets/files/student_projects/msc_25_reza.pdf#page=1" width="100%" height="1400px"></iframe>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://p4mars.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://p4mars.github.io/" rel="alternate" type="text/html" /><updated>2026-11-23T13:09:41+00:00</updated><id>https://p4mars.github.io/feed.xml</id><title type="html">p4MARS Lab</title><subtitle>The p4MARS Lab is an interdisciplinary research group at TU Delft focused on Perception and AI for Manufacturing Automation, Robotics, and Space.</subtitle><entry><title type="html">In-Orbit Assembly</title><link href="https://p4mars.github.io/2026/11/16/master-project-in-orbit-assembly.html" rel="alternate" type="text/html" title="In-Orbit Assembly" /><published>2026-11-16T00:00:00+00:00</published><updated>2026-11-23T13:07:35+00:00</updated><id>https://p4mars.github.io/2026/11/16/master-project-in-orbit-assembly</id><content type="html" xml:base="https://p4mars.github.io/2026/11/16/master-project-in-orbit-assembly.html"><![CDATA[<p>Large structures in space, such as telescopes, antennas and habitats, cannot be launched in one piece. They have to be assembled in orbit, by robots, with little or no human intervention and with very limited communication with the ground. This project studies the perception side of that problem: how a robot builds and maintains an understanding of the structure it is assembling.</p>
 
-<p><a href="https://autonomousrobots.nl/assets/files/student_projects/msc_25_reza.pdf">Download PDF</a></p>]]></content><author><name>jingkun-feng, reza-sabzevari</name></author><category term="master-project" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+<p><strong>What you will work on</strong></p>
+
+<ul>
+  <li>A perception pipeline that tracks modules and connection points during assembly, under harsh lighting and with specular, textureless surfaces.</li>
+  <li>A representation of the partially assembled structure that stays consistent as modules are added, and that supports planning the next step.</li>
+  <li>Evaluation in simulation and, where possible, on a robot arm in the lab with mock-up modules.</li>
+</ul>
+
+<p><strong>What we look for</strong></p>
+
+<ul>
+  <li>An MSc student in robotics, aerospace, computer science or a related field.</li>
+  <li>Background in 3D computer vision or SLAM, and comfort with Python or C++ and ROS.</li>
+  <li>Interest in bringing a method all the way to a working system, not only to a benchmark number.</li>
+</ul>
+
+<p>To apply, email <a href="mailto:R.Sabzevari@tudelft.nl">Reza Sabzevari</a> with your CV, your transcript of records and a short motivation. TU Delft students should also include the information listed under <em>How to apply</em> on the <a href="/vacancy">Vacancy</a> page.</p>
+
+<!-- TODO: please review this draft description; daily supervisor still to be confirmed -->]]></content><author><name>reza-sabzevari</name></author><category term="master-project" /><summary type="html"><![CDATA[Large structures in space, such as telescopes, antennas and habitats, cannot be launched in one piece. They have to be assembled in orbit, by robots, with little or no human intervention and with very limited communication with the ground. This project studies the perception side of that problem: how a robot builds and maintains an understanding of the structure it is assembling.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://p4mars.github.io/images/vacancy/in-orbit-assembly.svg" /><media:content medium="image" url="https://p4mars.github.io/images/vacancy/in-orbit-assembly.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Postdoctoral Researcher (LiT)</title><link href="https://p4mars.github.io/2026/11/16/postdoc-lit.html" rel="alternate" type="text/html" title="Postdoctoral Researcher (LiT)" /><published>2026-11-16T00:00:00+00:00</published><updated>2026-11-23T13:07:35+00:00</updated><id>https://p4mars.github.io/2026/11/16/postdoc-lit</id><content type="html" xml:base="https://p4mars.github.io/2026/11/16/postdoc-lit.html"><![CDATA[<!-- TODO: add position description, requirements and how to apply -->
+
+<p>Details will be announced soon. Interested candidates are welcome to contact <a href="mailto:R.Sabzevari@tudelft.nl">Reza Sabzevari</a> in the meantime.</p>]]></content><author><name>reza-sabzevari</name></author><category term="postdoc-position" /><summary type="html"><![CDATA[]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://p4mars.github.io/images/projects/automated-ndt.svg" /><media:content medium="image" url="https://p4mars.github.io/images/projects/automated-ndt.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Research Assistant: Foundation Models</title><link href="https://p4mars.github.io/2026/11/16/ra-foundation-models.html" rel="alternate" type="text/html" title="Research Assistant: Foundation Models" /><published>2026-11-16T00:00:00+00:00</published><updated>2026-11-23T13:07:35+00:00</updated><id>https://p4mars.github.io/2026/11/16/ra-foundation-models</id><content type="html" xml:base="https://p4mars.github.io/2026/11/16/ra-foundation-models.html"><![CDATA[<p>p4MARS develops open-source, interactive teaching material on machine learning and foundation models, so that students can experiment with modern perception and language models rather than only read about them. As a research assistant you help turn our research and course content into material that others can run.</p>
+
+<p><strong>What you will do</strong></p>
+
+<ul>
+  <li>Build interactive notebooks and small demos around vision-language and foundation models.</li>
+  <li>Package models and datasets so they run reliably on student laptops and on TU Delft infrastructure.</li>
+  <li>Write concise explanations and exercises to accompany each notebook, and test them with students.</li>
+  <li>Maintain the public repository: issues, documentation and reproducible environments.</li>
+</ul>
+
+<p><strong>What we look for</strong></p>
+
+<ul>
+  <li>A BSc or MSc student, or a recent graduate, in computer science, robotics, aerospace or a related field.</li>
+  <li>Solid Python and PyTorch; experience with transformers or vision-language models is a plus.</li>
+  <li>Care for clear code and clear writing, since the result is meant to be read and reused by others.</li>
+</ul>
+
+<p>The position is part-time and runs for a few months, with the exact hours and start date agreed together.</p>
+
+<p>To apply, email <a href="mailto:R.Sabzevari@tudelft.nl">Reza Sabzevari</a> with your CV, your transcript of records and a short motivation. TU Delft students should also include the information listed under <em>How to apply</em> on the <a href="/vacancy">Vacancy</a> page.</p>
+
+<!-- TODO: please review this draft description -->]]></content><author><name>reza-sabzevari</name></author><category term="ra-position" /><summary type="html"><![CDATA[p4MARS develops open-source, interactive teaching material on machine learning and foundation models, so that students can experiment with modern perception and language models rather than only read about them. As a research assistant you help turn our research and course content into material that others can run.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://p4mars.github.io/images/projects/education-materials.svg" /><media:content medium="image" url="https://p4mars.github.io/images/projects/education-materials.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Swarm Localization for Planetary Rovers</title><link href="https://p4mars.github.io/2026/11/15/master-project-swarm-localization.html" rel="alternate" type="text/html" title="Swarm Localization for Planetary Rovers" /><published>2026-11-15T00:00:00+00:00</published><updated>2026-11-23T13:07:35+00:00</updated><id>https://p4mars.github.io/2026/11/15/master-project-swarm-localization</id><content type="html" xml:base="https://p4mars.github.io/2026/11/15/master-project-swarm-localization.html"><![CDATA[<p>A swarm of small planetary rovers can explore far more of the Moon or Mars than a single large rover, and can keep working when one member fails. On another planet there is no GNSS, no prepared map and no magnetic north, so every rover must work out where it is relative to the others from what it can sense itself. This project studies relative localization within such a rover swarm.</p>
+
+<p><strong>What you will work on</strong></p>
+
+<ul>
+  <li>Fusing inter-rover measurements, such as range, bearing or visual detections of neighbours, with onboard odometry into a consistent estimate of the swarm geometry.</li>
+  <li>Handling the conditions of planetary terrain: wheel slip on loose regolith, long shadows and harsh lighting, few distinctive landmarks, and rovers that drop out of line of sight behind rocks and crater rims.</li>
+  <li>Keeping the estimate consistent as rovers join, leave or lose contact, with measurements arriving asynchronously over a limited communication link.</li>
+  <li>Evaluating accuracy, robustness and scaling behaviour in simulation and on small ground robots in the lab.</li>
+</ul>
+
+<p><strong>What we look for</strong></p>
+
+<ul>
+  <li>An MSc student in robotics, aerospace, computer science or a related field.</li>
+  <li>Background in state estimation, such as Kalman or factor-graph methods, and solid Python or C++.</li>
+  <li>Interest in planetary exploration and in methods that must work without external infrastructure.</li>
+</ul>
+
+<p>This project is currently taken. See the <a href="/vacancy">Vacancy</a> page for projects that are open.</p>
+
+<!-- TODO: please review this draft description -->]]></content><author><name>reza-sabzevari</name></author><category term="master-project" /><summary type="html"><![CDATA[A swarm of small planetary rovers can explore far more of the Moon or Mars than a single large rover, and can keep working when one member fails. On another planet there is no GNSS, no prepared map and no magnetic north, so every rover must work out where it is relative to the others from what it can sense itself. This project studies relative localization within such a rover swarm.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://p4mars.github.io/images/vacancy/swarm-localization.svg" /><media:content medium="image" url="https://p4mars.github.io/images/vacancy/swarm-localization.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Postdoctoral Researcher (ESA)</title><link href="https://p4mars.github.io/2026/11/15/postdoc-esa.html" rel="alternate" type="text/html" title="Postdoctoral Researcher (ESA)" /><published>2026-11-15T00:00:00+00:00</published><updated>2026-11-23T13:07:35+00:00</updated><id>https://p4mars.github.io/2026/11/15/postdoc-esa</id><content type="html" xml:base="https://p4mars.github.io/2026/11/15/postdoc-esa.html"><![CDATA[<!-- TODO: add position description, requirements and how to apply -->
+
+<p>Details will be announced soon. Interested candidates are welcome to contact <a href="mailto:R.Sabzevari@tudelft.nl">Reza Sabzevari</a> in the meantime.</p>]]></content><author><name>reza-sabzevari</name></author><category term="postdoc-position" /><summary type="html"><![CDATA[]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://p4mars.github.io/images/projects/modalforcast.svg" /><media:content medium="image" url="https://p4mars.github.io/images/projects/modalforcast.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Foundation Models for SLAM</title><link href="https://p4mars.github.io/2026/11/14/master-project-foundation-models-slam.html" rel="alternate" type="text/html" title="Foundation Models for SLAM" /><published>2026-11-14T00:00:00+00:00</published><updated>2026-11-23T13:07:35+00:00</updated><id>https://p4mars.github.io/2026/11/14/master-project-foundation-models-slam</id><content type="html" xml:base="https://p4mars.github.io/2026/11/14/master-project-foundation-models-slam.html"><![CDATA[<p>Classical SLAM builds a geometric map: points, surfaces and a trajectory. Foundation models add semantics and language, so that a map can also answer questions such as <em>where is the fire extinguisher</em> or <em>which door leads to the lab</em>. This project studies how to combine the two without giving up the metric accuracy and real-time behaviour that robots need.</p>
+
+<p><strong>What you will work on</strong></p>
+
+<ul>
+  <li>Grounding open-vocabulary features from vision-language models into a metric SLAM map.</li>
+  <li>Keeping the combined representation consistent over time, including when the robot revisits a place or the scene changes.</li>
+  <li>Evaluating both the geometry, for example trajectory and reconstruction error, and the language grounding on real sequences.</li>
+</ul>
+
+<p><strong>What we look for</strong></p>
+
+<ul>
+  <li>An MSc student with background in SLAM or 3D vision, and in deep learning.</li>
+  <li>Solid Python and PyTorch; experience with ROS and with running methods on real data is a plus.</li>
+</ul>
+
+<p>This project is currently taken. See the <a href="/vacancy">Vacancy</a> page for projects that are open.</p>
+
+<!-- TODO: please review this draft description -->]]></content><author><name>reza-sabzevari</name></author><category term="master-project" /><summary type="html"><![CDATA[Classical SLAM builds a geometric map: points, surfaces and a trajectory. Foundation models add semantics and language, so that a map can also answer questions such as where is the fire extinguisher or which door leads to the lab. This project studies how to combine the two without giving up the metric accuracy and real-time behaviour that robots need.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://p4mars.github.io/images/vacancy/foundation-models-slam.svg" /><media:content medium="image" url="https://p4mars.github.io/images/vacancy/foundation-models-slam.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Perception-Guided High-Precision Manipulation for In-Orbit Assembly</title><link href="https://p4mars.github.io/2026/11/13/master-project-perception-manipulation-in-orbit.html" rel="alternate" type="text/html" title="Perception-Guided High-Precision Manipulation for In-Orbit Assembly" /><published>2026-11-13T00:00:00+00:00</published><updated>2026-11-23T13:07:35+00:00</updated><id>https://p4mars.github.io/2026/11/13/master-project-perception-manipulation-in-orbit</id><content type="html" xml:base="https://p4mars.github.io/2026/11/13/master-project-perception-manipulation-in-orbit.html"><![CDATA[<p>In-orbit assembly comes down to a classic problem under unforgiving conditions: peg-in-hole. A robot has to insert a peg, a strut, a connector or a docking pin into its receptacle with sub-millimetre clearance, while illumination is harsh and changing, surfaces are specular and textureless, nothing settles under gravity, and no operator can correct a mistake in real time. This project asks whether <strong>vision-language-action (VLA) models</strong> can solve that insertion task end to end, instead of a hand-built pipeline of pose estimation, planning and control.</p>
+
+<p><strong>What you will work on</strong></p>
+
+<ul>
+  <li>Applying and fine-tuning a vision-language-action model on peg-in-hole insertion: from images and a task description straight to robot actions.</li>
+  <li>Comparing the VLA policy against a classical baseline of pose estimation plus visual servoing, on precision, success rate and recovery from failed insertions.</li>
+  <li>Studying what the model needs in order to generalise across peg and hole geometries, tolerances, lighting and viewpoints, and how much of that can come from simulation.</li>
+  <li>Dealing with contact: the last millimetres are a contact-rich problem, so the policy has to use force or compliance, not vision alone.</li>
+  <li>Validating on a robot arm in the lab with representative mock-ups and space-like lighting.</li>
+</ul>
+
+<p><strong>What we look for</strong></p>
+
+<ul>
+  <li>An MSc student in robotics, computer science, aerospace or a related field.</li>
+  <li>Experience with deep learning and PyTorch; familiarity with VLA models, imitation learning or reinforcement learning is a plus.</li>
+  <li>Comfort with Python and ROS, and willingness to work on real hardware.</li>
+</ul>
+
+<p>This project is currently taken. See the <a href="/vacancy">Vacancy</a> page for projects that are open.</p>
+
+<!-- TODO: please review this draft description -->]]></content><author><name>reza-sabzevari</name></author><category term="master-project" /><summary type="html"><![CDATA[In-orbit assembly comes down to a classic problem under unforgiving conditions: peg-in-hole. A robot has to insert a peg, a strut, a connector or a docking pin into its receptacle with sub-millimetre clearance, while illumination is harsh and changing, surfaces are specular and textureless, nothing settles under gravity, and no operator can correct a mistake in real time. This project asks whether vision-language-action (VLA) models can solve that insertion task end to end, instead of a hand-built pipeline of pose estimation, planning and control.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://p4mars.github.io/images/vacancy/perception-manipulation.svg" /><media:content medium="image" url="https://p4mars.github.io/images/vacancy/perception-manipulation.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Demo Implementation Open-Vocabulary Navigation and Manipulation Based on T-FunS3D</title><link href="https://p4mars.github.io/2026/08/16/TA-tfuns3d-demo.html" rel="alternate" type="text/html" title="Demo Implementation Open-Vocabulary Navigation and Manipulation Based on T-FunS3D" /><published>2026-08-16T00:00:00+00:00</published><updated>2026-11-23T13:07:35+00:00</updated><id>https://p4mars.github.io/2026/08/16/TA-tfuns3d-demo</id><content type="html" xml:base="https://p4mars.github.io/2026/08/16/TA-tfuns3d-demo.html"><![CDATA[<p>This position supported the live demo built on <strong>T-FunS3D</strong>, our task-driven, open-vocabulary 3D functionality segmentation method, which was shown at Robots in Business 2026 at RoboHouse. The work consisted of turning a research prototype into a robot demo that runs reliably in front of an audience.</p>
+
+<p><strong>What the position involved</strong></p>
+
+<ul>
+  <li>Integrating T-FunS3D with navigation and manipulation on a mobile manipulator.</li>
+  <li>Building the pipeline from a spoken or typed task to a target object, functional part and robot action.</li>
+  <li>Making the system robust to a changing, crowded environment, and preparing a fallback mode for the event.</li>
+</ul>
+
+<p>This position is no longer available. For similar opportunities, see the open positions on the <a href="/vacancy">Vacancy</a> page.</p>
+
+<!-- TODO: please review this draft description -->]]></content><author><name>jingkun-feng, reza-sabzevari</name></author><category term="ra-position" /><summary type="html"><![CDATA[This position supported the live demo built on T-FunS3D, our task-driven, open-vocabulary 3D functionality segmentation method, which was shown at Robots in Business 2026 at RoboHouse. The work consisted of turning a research prototype into a robot demo that runs reliably in front of an audience.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://p4mars.github.io/images/vacancy/tfuns3d-demo.jpg" /><media:content medium="image" url="https://p4mars.github.io/images/vacancy/tfuns3d-demo.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Deep Learning for Computer Vision and Robotics</title><link href="https://p4mars.github.io/2026/08/16/ta-dl4cv.html" rel="alternate" type="text/html" title="Deep Learning for Computer Vision and Robotics" /><published>2026-08-16T00:00:00+00:00</published><updated>2026-11-23T13:07:35+00:00</updated><id>https://p4mars.github.io/2026/08/16/ta-dl4cv</id><content type="html" xml:base="https://p4mars.github.io/2026/08/16/ta-dl4cv.html"><![CDATA[<p>This position supports our teaching material on deep learning for computer vision and robotics, part of the lab’s open-source education effort. You help prepare and maintain the hands-on part of the material: the exercises where students train, evaluate and deploy models on real perception data.</p>
+
+<p><strong>What you will do</strong></p>
+
+<ul>
+  <li>Develop and test lab exercises on 2D and 3D perception: detection, segmentation, depth and pose estimation.</li>
+  <li>Prepare datasets and baseline models, and check that exercises run within a reasonable time and memory budget.</li>
+  <li>Write solutions and grading notes, and improve the material based on student feedback.</li>
+</ul>
+
+<p><strong>What we look for</strong></p>
+
+<ul>
+  <li>A student or recent graduate with a solid background in deep learning and computer vision.</li>
+  <li>Good Python and PyTorch skills; experience with ROS or robot data is a plus.</li>
+  <li>Experience as a teaching assistant is welcome but not required.</li>
+</ul>
+
+<p>The position is part-time and runs for a few months, with the exact hours and start date agreed together.</p>
+
+<p>To apply, email <a href="mailto:R.Sabzevari@tudelft.nl">Reza Sabzevari</a> with your CV, your transcript of records and a short motivation. TU Delft students should also include the information listed under <em>How to apply</em> on the <a href="/vacancy">Vacancy</a> page.</p>
+
+<!-- TODO: please review this draft description -->]]></content><author><name>jingkun-feng, reza-sabzevari</name></author><category term="ra-position" /><summary type="html"><![CDATA[This position supports our teaching material on deep learning for computer vision and robotics, part of the lab’s open-source education effort. You help prepare and maintain the hands-on part of the material: the exercises where students train, evaluate and deploy models on real perception data.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://p4mars.github.io/images/teaching/data-science.svg" /><media:content medium="image" url="https://p4mars.github.io/images/teaching/data-science.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Simultaneous Localization and Mapping in Dynamic Environments</title><link href="https://p4mars.github.io/2026/01/04/master-project-dyanmicSLAM.html" rel="alternate" type="text/html" title="Simultaneous Localization and Mapping in Dynamic Environments" /><published>2026-01-04T00:00:00+00:00</published><updated>2026-11-23T13:07:35+00:00</updated><id>https://p4mars.github.io/2026/01/04/master-project-dyanmicSLAM</id><content type="html" xml:base="https://p4mars.github.io/2026/01/04/master-project-dyanmicSLAM.html"><![CDATA[<iframe src="https://autonomousrobots.nl/assets/files/student_projects/msc_25_reza.pdf#page=1" width="100%" height="1400px"></iframe>
+
+<p><a href="https://autonomousrobots.nl/assets/files/student_projects/msc_25_reza.pdf">Download PDF</a></p>]]></content><author><name>jingkun-feng, reza-sabzevari</name></author><category term="master-project" /><summary type="html"><![CDATA[]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://p4mars.github.io/images/vacancy/dynamic-slam.svg" /><media:content medium="image" url="https://p4mars.github.io/images/vacancy/dynamic-slam.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

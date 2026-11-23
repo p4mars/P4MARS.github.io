@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+
+  <!--
+  put your search engine verification (e.g. Google Search Console) tag here
+-->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Foundation Models for SLAM | p4MARS Lab</title>
+
+<link rel="icon" href="/images/logo.png">
+
+<meta name="title" content="Foundation Models for SLAM">
+<meta name="description" content="Perception and AI for Manufacturing Automation, Robotics, and Space. The p4MARS Lab is an interdisciplinary research group at TU Delft focused on Perception and AI for Manufacturing Automation, Robotics, and Space.">
+
+<meta property="og:title" content="Foundation Models for SLAM">
+<meta property="og:site_title" content="p4MARS Lab">
+<meta property="og:description" content="Perception and AI for Manufacturing Automation, Robotics, and Space. The p4MARS Lab is an interdisciplinary research group at TU Delft focused on Perception and AI for Manufacturing Automation, Robotics, and Space.">
+<meta property="og:url" content="https://p4mars.github.io">
+<meta property="og:image" content="/images/share.png">
+<meta property="og:locale" content="en_US">
+
+<meta property="twitter:title" content="Foundation Models for SLAM">
+<meta property="twitter:description" content="Perception and AI for Manufacturing Automation, Robotics, and Space. The p4MARS Lab is an interdisciplinary research group at TU Delft focused on Perception and AI for Manufacturing Automation, Robotics, and Space.">
+<meta property="twitter:url" content="https://p4mars.github.io">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="/images/share.png">
+
+
+  <meta name="author" content="reza-sabzevari">
+  <meta property="og:type" content="article">
+  <meta property="og:updated_time" content="2026-11-23T13:07:35+00:00">
+  <meta property="article:published_time" content="2026-11-14T00:00:00+00:00">
+  <meta property="article:modified_time" content="2026-11-23T13:07:35+00:00">
+  <meta name="revised" content="2026-11-23T13:07:35+00:00">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "BlogPosting",
+      "author": { "@type": "Person", "name": "Foundation Models for SLAM" },
+      "datePublished": "2026-11-14T00:00:00+00:00",
+      "dateModified": "2026-11-23T13:07:35+00:00",
+    
+    "name": "Foundation Models for SLAM",
+    "description": "Perception and AI for Manufacturing Automation, Robotics, and Space. The p4MARS Lab is an interdisciplinary research group at TU Delft focused on Perception and AI for Manufacturing Automation, Robotics, and Space.",
+    "headline": "Foundation Models for SLAM",
+    "publisher": {
+      "@type": "Organization",
+      "logo": { "@type": "ImageObject", "url": "/images/logo.png" }
+    },
+    "url": "https://p4mars.github.io"
+  }
+</script>
+
+<link rel="alternate" type="application/rss+xml" href="https://p4mars.github.io/feed.xml">
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?display=swap&&family=Inter:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Plus+Jakarta%20Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet" media="none" onload="this.removeAttribute('media'); this.onload = null;">
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css" rel="stylesheet">
+
+<!-- include all sass in styles folder -->
+
+
+  
+    <link href="/_styles/-theme.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/alert.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/all.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/anchor.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/background.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/body.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/bold.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/button.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/card.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/checkbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/citation.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/code.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/cols.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/dark-toggle.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/details.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/event.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/feature.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/figure.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/float.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/font.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/footer.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/form.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/grid.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/header.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/heading.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/hero.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/highlight.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/icon.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/image.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/link.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/list.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/main.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/media.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/page-hero.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/paragraph.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/pillar.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/portrait.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/post-excerpt.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/post-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/post-nav.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/project.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/quote.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/rule.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/search-box.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/search-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/section.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/service.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/table.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/tags.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/textbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/tooltip.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/util.css" rel="stylesheet">
+  
+
+
+<!-- include all css in styles folder -->
+
+
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/_scripts/anchors.js"></script>
+
+  <script src="/_scripts/dark-mode.js"></script>
+
+  <script src="/_scripts/fetch-tags.js"></script>
+
+  <script src="/_scripts/search.js"></script>
+
+  <script src="/_scripts/site-search.js"></script>
+
+  <script src="/_scripts/table-wrap.js"></script>
+
+  <script src="/_scripts/tooltip.js"></script>
+
+
+</head>
+
+  <body>
+    
+
+
+
+
+
+
+
+<header class="background" style="--image: url('')" data-dark="false">
+  <a href="/" class="home">
+    
+      <span class="logo">
+        
+          <img src="/images/logo.png" alt="logo">
+        
+      </span>
+    
+    
+      <span class="title-text" data-tooltip="Home">
+        
+          <span class="title">p4MARS Lab</span>
+        
+        
+          <span class="subtitle">Perception and AI for Manufacturing Automation, Robotics, and Space</span>
+        
+      </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <nav>
+    
+    
+    
+      
+        <a href="/research/" data-tooltip="Published works">
+          Research
+        </a>
+      
+    
+      
+        <a href="/projects/" data-tooltip="Our research projects">
+          Projects
+        </a>
+      
+    
+      
+        <a href="/education/" data-tooltip="Courses and supervised theses">
+          Education
+        </a>
+      
+    
+      
+        <a href="/team/" data-tooltip="Members of our lab">
+          Team
+        </a>
+      
+    
+      
+        <a href="/vacancy/" data-tooltip="Open positions and thesis projects">
+          Vacancy
+        </a>
+      
+    
+      
+        <a href="/news/" data-tooltip="Lab news, talks and events">
+          News
+        </a>
+      
+    
+      
+        <a href="/media/" data-tooltip="Interviews, talks and press">
+          Media
+        </a>
+      
+    
+      
+        <a href="/contact/" data-tooltip="Email, address, and location">
+          Contact
+        </a>
+      
+    
+  </nav>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+
+
+
+
+
+  
+  
+  
+
+  <section class="background" data-size="1" style="--image: url('/images/vacancy/foundation-models-slam.svg')">
+    <!--
+  <background>images/vacancy/foundation-models-slam.svg</background>
+  <dark></dark>
+  <size>1</size>
+-->
+
+
+<h1 class="center">Foundation Models for SLAM</h1>
+
+
+<p class="center"><span class="status-badge">No longer available</span></p>
+
+
+<div class="post-info">
+  
+    
+    
+      
+      
+        
+          
+
+
+
+<div class="portrait-wrapper">
+  <a href="/members/reza-sabzevari.html" class="portrait" data-style="tiny" aria-label="Reza Sabzevari">
+    
+      <i class="icon fa-solid fa-microscope"></i>
+    
+
+    <img src="/images/member/r_sabzevari.jpg" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+
+    
+      <span class="portrait-name">
+        Reza Sabzevari
+      </span>
+    
+
+    
+      <span class="portrait-description">
+        Associate Professor
+      </span>
+    
+
+    
+      <span class="portrait-affiliation">
+        TU Delft | AE
+      </span>
+    
+
+    
+  </a>
+</div>
+
+        
+      
+    
+  
+
+  
+  
+
+  
+    <span data-tooltip="Originally published on">
+      <i class="icon fa-regular fa-calendar"></i>
+      <span>November 14, 2026</span>
+    </span>
+  
+
+  
+</div>
+
+
+  
+
+
+  <div class="tags">
+    
+      <a href='/blog?search="tag:%20master-project"' class="tag" data-tag="master-project" data-tooltip='Show items with the tag "master-project"'>
+        
+        master-project
+      </a>
+    
+  </div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  <background></background>
+  <dark></dark>
+  <size></size>
+-->
+
+
+
+
+
+
+
+
+
+  <div class="project-links">
+    
+    
+      <div class="project-people">
+        <span class="project-links-label">Working on it</span>
+        
+          
+          
+            <a class="project-person" href="/members/francesco-de-patre.html">
+              <img src="/images/member/figure-neutral.svg" alt="" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+              Francesco De Patre
+            </a>
+          
+        
+      </div>
+    
+  </div>
+
+
+
+<p>Classical SLAM builds a geometric map: points, surfaces and a trajectory. Foundation models add semantics and language, so that a map can also answer questions such as <em>where is the fire extinguisher</em> or <em>which door leads to the lab</em>. This project studies how to combine the two without giving up the metric accuracy and real-time behaviour that robots need.</p>
+
+<p><strong>What you will work on</strong></p>
+
+<ul>
+  <li>Grounding open-vocabulary features from vision-language models into a metric SLAM map.</li>
+  <li>Keeping the combined representation consistent over time, including when the robot revisits a place or the scene changes.</li>
+  <li>Evaluating both the geometry, for example trajectory and reconstruction error, and the language grounding on real sequences.</li>
+</ul>
+
+<p><strong>What we look for</strong></p>
+
+<ul>
+  <li>An MSc student with background in SLAM or 3D vision, and in deep learning.</li>
+  <li>Solid Python and PyTorch; experience with ROS and with running methods on real data is a plus.</li>
+</ul>
+
+<p>This project is currently taken. See the <a href="/vacancy">Vacancy</a> page for projects that are open.</p>
+
+<!-- TODO: please review this draft description -->
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  <background></background>
+  <dark></dark>
+  <size></size>
+-->
+
+
+<div class="post-nav">
+  <span>
+    
+      <i class="icon fa-solid fa-angle-left"></i> Previous post<br>
+      <a href="/2026/11/13/master-project-perception-manipulation-in-orbit.html">
+        Perception-Guided High-Precision Manipulation for In-Orbit Assembly
+      </a>
+    
+  </span>
+  <span>
+    
+      Next post <i class="icon fa-solid fa-angle-right"></i><br>
+      <a href="/2026/11/15/master-project-swarm-localization.html">
+        Swarm Localization for Planetary Rovers
+      </a>
+    
+  </span>
+</div>
+  </section>
+
+
+    </main>
+    
+
+
+<footer class="background" style="--image: url('')" data-dark="false" data-size="wide">
+  <div class="footer-about">
+    <span class="footer-title">p4MARS Lab</span>
+    
+      <span>Faculty of Aerospace Engineering, Delft University of Technology</span>
+    
+    
+      <span class="footer-muted">Kluyverweg 1, 2629 HS Delft, The Netherlands</span>
+    
+  </div>
+
+  <div>
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="mailto:r.sabzevari@tudelft.nl" data-tooltip="Email" data-style="bare" aria-label="Email">
+      <i class="icon fa-solid fa-envelope"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://github.com/p4mars" data-tooltip="GitHub" data-style="bare" aria-label="GitHub">
+      <i class="icon fa-brands fa-github"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://www.linkedin.com/in/rezasabzevari" data-tooltip="LinkedIn" data-style="bare" aria-label="LinkedIn">
+      <i class="icon fa-brands fa-linkedin"></i>
+      
+    </a>
+  </div>
+
+
+    
+  </div>
+
+  <div class="footer-muted">
+    © 2026
+    p4MARS Lab
+      |   Built with
+    <a href="https://github.com/greenelab/lab-website-template">
+      Lab Website Template
+    </a>
+  </div>
+
+  <input type="checkbox" class="dark-toggle" data-tooltip="Dark mode" aria-label="toggle dark mode" oninput="onDarkToggleChange(event)">
+</footer>
+
+  </body>
+</html>

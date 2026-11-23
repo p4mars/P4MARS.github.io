@@ -54,5 +54,10 @@
     max-width: 400px;
   }
 }
+.feature-subtitle {
+  display: block;
+  margin-top: 4px;
+  font-size: 1em;
+}
 
 /*# sourceMappingURL=feature.css.map */
