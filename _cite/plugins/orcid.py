@@ -3,6 +3,18 @@ from urllib.request import Request, urlopen
 from util import *
 from manubot.cite.handlers import prefix_to_handler as manubot_citable
 
+# ORCID external-id types that identify one work, in order of preference.
+# Anything else (issn, isbn, scopus, wosuid, source-work-id, ...) falls through
+# to the ORCID metadata below instead of being handed to Manubot.
+ARTICLE_ID_TYPES = [
+    "doi",
+    "arxiv",
+    "pmid",
+    "pmcid",
+    "pmc",
+    "biorxiv",
+]
+
 
 def main(entry):
     """
@@ -43,9 +55,11 @@ def main(entry):
         id_type = get_safe(_id, "external-id-type", "")
 
         # is id of certain type
-        # types = ["doi"]
-        # if id_type not in types:
-        #     return False
+        # manubot_citable covers ~5000 prefixes, including journal- and
+        # book-level ones like issn/isbn. Citing those yields the journal, not
+        # the paper, so restrict to identifiers that denote a single work.
+        if id_type not in ARTICLE_ID_TYPES:
+            return False
 
         # is id citable by manubot
         if id_type not in manubot_citable:
@@ -56,12 +70,7 @@ def main(entry):
     # prefer some ids over others by some criteria. return lower number to prefer more.
     def sort_id(_id):
         id_type = get_safe(_id, "external-id-type", "")
-        types = [
-            "doi",
-            # "arxiv",
-            # "url",
-        ]
-        return index_of(types, id_type)
+        return index_of(ARTICLE_ID_TYPES, id_type)
 
     # go through each source
     for work in response:
@@ -113,9 +122,25 @@ def main(entry):
             # get publisher
             publisher = first(lambda s: get_safe(s, "journal-title.value", ""))
 
-            # get date
+            # get publication date, as YYYY-MM-DD with missing parts filled in.
+            # orcid reports month/day as null for many older works.
+            def published(s):
+                year = get_safe(s, "publication-date.year.value", "")
+                if not year:
+                    return None
+                month = get_safe(s, "publication-date.month.value", "") or "1"
+                day = get_safe(s, "publication-date.day.value", "") or "1"
+                try:
+                    return f"{int(year):04d}-{int(month):02d}-{int(day):02d}"
+                except ValueError:
+                    return None
+
+            # get date. prefer the actual publication date; the record
+            # timestamps below are when the orcid entry was last touched, which
+            # for most works is nowhere near when they were published.
             date = (
-                get_safe(work, "last-modified-date.value")
+                first(published)
+                or get_safe(work, "last-modified-date.value")
                 or first(lambda s: get_safe(s, "last-modified-date.value"))
                 or get_safe(work, "created-date.value")
                 or first(lambda s: get_safe(s, "created-date.value"))

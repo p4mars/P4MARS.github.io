@@ -2,6 +2,7 @@
 utility functions for cite process and plugins
 """
 
+import re
 import subprocess
 import json
 import yaml
@@ -94,6 +95,14 @@ def index_of(_list, value, fallback=float("inf")):
         return _list.index(value)
     except ValueError:
         return fallback
+
+
+def normalize_title(title):
+    """
+    normalize a title for comparison, ignoring case, punctuation and spacing
+    """
+
+    return re.sub(r"\W+", " ", (title or "").lower()).strip()
 
 
 def list_of_dicts(data):

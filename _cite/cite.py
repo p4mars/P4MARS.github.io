@@ -173,6 +173,37 @@ for index, source in enumerate(sources):
 
 log()
 
+
+# a work can show up more than once: orcid may hold a metadata-only copy
+# alongside one with a doi, and the same work can arrive from several plugins.
+# prefer the cited copy, then the one carrying the most detail.
+def _merit(citation):
+    return (
+        1 if get_safe(citation, "id", "") else 0,
+        sum(1 for key in ("authors", "publisher", "date", "link") if citation.get(key)),
+    )
+
+
+deduped = {}
+for citation in citations:
+    key = normalize_title(get_safe(citation, "title", ""))
+    # keep untitled entries as-is, they cannot be compared
+    if not key:
+        deduped[id(citation)] = citation
+        continue
+    if key not in deduped or _merit(citation) > _merit(deduped[key]):
+        if key in deduped:
+            log(f"Discarding duplicate of {key[:60]}", indent=1, level="WARNING")
+        deduped[key] = citation
+
+removed = len(citations) - len(deduped)
+if removed:
+    log(f"Removed {removed} duplicate citation(s)", indent=1)
+citations = list(deduped.values())
+
+
+log()
+
 log("Saving updated citations")
 
 
