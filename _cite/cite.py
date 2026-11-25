@@ -18,8 +18,8 @@ load_dotenv()
 PRUNE_OLDER_THAN_YEARS = 10
 PRUNE_BELOW_CITATIONS = 20
 
-# publication types that are exempt from the citation threshold, because
-# openalex does not index them and would report no citations for all of them
+# publication types that are exempt from the citation threshold, because the
+# citation sources do not index them and would report none for all of them
 PRUNE_EXEMPT_TYPES = ["patent"]
 
 
@@ -330,14 +330,25 @@ def keep(citation):
     # how many times has it been cited
     _id = str(get_safe(citation, "id", "") or "")
     doi = _id[4:] if _id.startswith("doi:") else (_id if _id.startswith("10.") else None)
-    count = citation_count(doi, title)
+    count, per_source = citation_count(doi, title)
+    detail = ", ".join(
+        f"{source} {value if value is not None else '?'}"
+        for source, value in per_source.items()
+    )
     if count is None:
-        # not found in openalex. treated as uncited, which is the point of the
-        # filter, but say so rather than letting it disappear quietly.
-        log(f"No citation count for {title[:45]}, treating as 0", indent=1, level="WARNING")
+        # no source knows the work. treated as uncited, which is the point of
+        # the filter, but say so rather than letting it disappear quietly.
+        log(
+            f"No citation count for {title[:45]} ({detail}), treating as 0",
+            indent=1,
+            level="WARNING",
+        )
         count = 0
     if count < PRUNE_BELOW_CITATIONS:
-        log(f"Dropping ({count} citations, {published.year}) {title[:40]}", indent=1)
+        log(
+            f"Dropping ({published.year}, {count} citations = {detail}) {title[:34]}",
+            indent=1,
+        )
         return False
 
     return True

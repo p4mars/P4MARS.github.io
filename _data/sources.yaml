@@ -81,16 +81,6 @@
   link: https://patents.google.com/patent/DE102020213337A1/en
 
 
-# Works that ORCID 0000-0002-6309-5890 claims but that are not this lab's.
-# They are self-asserted in the ORCID record and carry no DOI, so they cannot
-# be matched by id; cite.py drops them by title instead. Deleting them from the
-# ORCID record is the real fix, and these entries can then go.
-- title: A Novel Bioinspired Nanoparticle Promotes Neurite outgrowth and Increases Neural Network Activity in Primary Neuronal Cultures
-  remove: true
-
-- title: Nanoscale Characterization of Nano-Liposome as Drug Delivery In vitro
-  remove: true
-
 
 # ORCID lists this chapter without a DOI, so there is no id to merge on and no
 # link either. Patch one in by title. The URL is InTech's citation-PDF URL,
