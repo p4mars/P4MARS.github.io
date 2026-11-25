@@ -121,6 +121,18 @@ log("Generating citations")
 citations = []
 
 
+# titles explicitly flagged for removal. a source flagged with remove and no id
+# cannot be matched until manubot has resolved titles, so collect them here and
+# filter after the citations are generated.
+removed_titles = {
+    normalize_title(get_safe(source, "title", ""))
+    for source in sources
+    if get_safe(source, "remove", False) == True
+    and get_safe(source, "title", "")
+    and not get_safe(source, "id", "")
+}
+
+
 # loop through compiled sources
 for index, source in enumerate(sources):
     log(f"Processing source {index + 1} of {len(sources)}, {label(source)}")
@@ -172,6 +184,20 @@ for index, source in enumerate(sources):
 
 
 log()
+
+
+# drop citations whose titles were flagged for removal. this covers works that
+# a metasource supplies without a citable id, which cannot be matched by id.
+if removed_titles:
+    kept = []
+    for citation in citations:
+        if normalize_title(get_safe(citation, "title", "")) in removed_titles:
+            log(f"Removing flagged citation {get_safe(citation, 'title', '')[:60]}", indent=1)
+        else:
+            kept.append(citation)
+    if len(kept) != len(citations):
+        log(f"Removed {len(citations) - len(kept)} flagged citation(s)", indent=1)
+    citations = kept
 
 
 # a work can show up more than once: orcid may hold a metadata-only copy

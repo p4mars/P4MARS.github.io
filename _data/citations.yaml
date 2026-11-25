@@ -119,14 +119,6 @@
   reza-sabzevari: true
   plugin: orcid.py
   file: orcid.yaml
-- title: A Novel Bioinspired Nanoparticle Promotes Neurite outgrowth and Increases
-    Neural Network Activity in Primary Neuronal Cultures
-  publisher: Society for Neuroscience annual meeting, Washington, DC, USA
-  date: '2014-01-01'
-  orcid: 0000-0002-6309-5890
-  reza-sabzevari: true
-  plugin: orcid.py
-  file: orcid.yaml
 - id: doi:10.1109/ICRA.2014.6906585
   title: Monocular simultaneous multi-body motion segmentation and reconstruction
     from perspective views
@@ -136,13 +128,6 @@
   publisher: 2014 IEEE International Conference on Robotics and Automation (ICRA)
   date: '2014-05-01'
   link: https://doi.org/ghk3rg
-  orcid: 0000-0002-6309-5890
-  reza-sabzevari: true
-  plugin: orcid.py
-  file: orcid.yaml
-- title: Nanoscale Characterization of Nano-Liposome as Drug Delivery In vitro
-  publisher: Drug Discovery & Therapy World Congress (DDTWC2013)
-  date: '2013-01-01'
   orcid: 0000-0002-6309-5890
   reza-sabzevari: true
   plugin: orcid.py
