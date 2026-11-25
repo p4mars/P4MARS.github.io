@@ -4,9 +4,11 @@ utility functions for cite process and plugins
 
 import re
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 from urllib.parse import quote
 import subprocess
 import json
+from time import sleep
 import yaml
 from yaml.loader import SafeLoader
 from pathlib import Path
@@ -99,42 +101,92 @@ def index_of(_list, value, fallback=float("inf")):
         return fallback
 
 
-@log_cache
+def _api_get(url, retries=4):
+    """
+    fetch json, backing off when a shared rate limit pool pushes back
+    """
+
+    for attempt in range(retries):
+        try:
+            request = Request(url, headers={"User-Agent": "lab-website-template"})
+            with urlopen(request, timeout=30) as response:
+                return json.load(response)
+        except HTTPError as e:
+            if e.code not in (429, 503) or attempt == retries - 1:
+                return None
+            sleep(2 * (attempt + 1))
+        except Exception:
+            return None
+    return None
+
+
 @cache.memoize(name="openalex", expire=30 * (60 * 60 * 24))
-def citation_count(doi, title):
+def openalex_count(doi, title):
     """
-    look up how many times a work has been cited, via openalex.
-    returns None when the work cannot be found, which is not the same as zero.
+    times cited according to openalex, or None if the work is not found
     """
 
-    def get(url):
-        request = Request(url, headers={"User-Agent": "lab-website-template"})
-        with urlopen(request, timeout=30) as response:
-            return json.load(response)
-
-    # look up by doi first, it is unambiguous
     if doi:
-        try:
-            work = get(f"https://api.openalex.org/works/doi:{quote(doi, safe='')}")
-            if "cited_by_count" in work:
-                return work["cited_by_count"]
-        except Exception:
-            pass
+        work = _api_get(f"https://api.openalex.org/works/doi:{quote(doi, safe='')}")
+        if isinstance(work, dict) and work.get("cited_by_count") is not None:
+            return work["cited_by_count"]
 
-    # fall back to a title search, and only trust an unambiguous match
     if title:
-        try:
-            found = get(
-                "https://api.openalex.org/works"
-                f"?filter=title.search:{quote(title, safe='')}&per-page=1"
-            )
-            result = (found.get("results") or [None])[0]
-            if result and normalize_title(result.get("title")) == normalize_title(title):
-                return result.get("cited_by_count")
-        except Exception:
-            pass
+        found = _api_get(
+            "https://api.openalex.org/works"
+            f"?filter=title.search:{quote(title, safe='')}&per-page=1"
+        )
+        result = (get_safe(found, "results", []) or [None])[0]
+        if result and normalize_title(result.get("title")) == normalize_title(title):
+            return result.get("cited_by_count")
 
     return None
+
+
+@cache.memoize(name="semantic-scholar", expire=30 * (60 * 60 * 24))
+def semantic_scholar_count(doi, title):
+    """
+    times cited according to semantic scholar, or None if the work is not found
+    """
+
+    api = "https://api.semanticscholar.org/graph/v1/paper"
+
+    if doi:
+        paper = _api_get(f"{api}/DOI:{quote(doi, safe='')}?fields=citationCount")
+        if isinstance(paper, dict) and paper.get("citationCount") is not None:
+            return paper["citationCount"]
+
+    if title:
+        found = _api_get(
+            f"{api}/search/match?query={quote(title, safe='')}"
+            "&fields=title,citationCount"
+        )
+        match = (get_safe(found, "data", []) or [None])[0]
+        if match and normalize_title(match.get("title")) == normalize_title(title):
+            return match.get("citationCount")
+
+    return None
+
+
+def citation_count(doi, title):
+    """
+    times cited, averaged over the sources that know the work.
+
+    the two disagree routinely, by a few citations on small counts and by tens
+    on large ones, because they index different corpora. averaging keeps one
+    source's blind spot from deciding whether a work is kept, and returns a
+    count from whichever source has it when only one does.
+
+    returns (average, {source: count}) with average None if neither knows it.
+    """
+
+    counts = {
+        "openalex": openalex_count(doi, title),
+        "semantic-scholar": semantic_scholar_count(doi, title),
+    }
+    known = [count for count in counts.values() if count is not None]
+    average = round(sum(known) / len(known)) if known else None
+    return average, counts
 
 
 def arxiv_url(citation):
