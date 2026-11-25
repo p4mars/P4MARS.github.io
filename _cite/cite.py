@@ -13,6 +13,16 @@ from util import *
 load_dotenv()
 
 
+# a publication older than this many years is pruned unless it has at least
+# PRUNE_BELOW_CITATIONS citations. set PRUNE_OLDER_THAN_YEARS to 0 to disable.
+PRUNE_OLDER_THAN_YEARS = 10
+PRUNE_BELOW_CITATIONS = 20
+
+# publication types that are exempt from the citation threshold, because
+# openalex does not index them and would report no citations for all of them
+PRUNE_EXEMPT_TYPES = ["patent"]
+
+
 # save errors/warnings for reporting at end
 errors = []
 warnings = []
@@ -226,6 +236,78 @@ removed = len(citations) - len(deduped)
 if removed:
     log(f"Removed {removed} duplicate citation(s)", indent=1)
 citations = list(deduped.values())
+
+
+log()
+
+
+# point arxiv works at arxiv.org. manubot gives an arxiv doi a shortdoi link
+# such as https://doi.org/hcf3w2, which hides where it actually goes.
+for citation in citations:
+    link = arxiv_url(citation)
+    if link:
+        citation["link"] = link
+        log(f"Linking {get_safe(citation, 'title', '')[:45]} to {link}", indent=1)
+
+
+log()
+
+log("Filtering citations")
+
+# drop entries with no publisher, and older entries that were never taken up.
+# the age cutoff is calendar-exact rather than 365 * n days.
+today = date.today()
+try:
+    cutoff = today.replace(year=today.year - PRUNE_OLDER_THAN_YEARS)
+except ValueError:
+    # today is 29 february and the cutoff year is not a leap year
+    cutoff = today.replace(year=today.year - PRUNE_OLDER_THAN_YEARS, day=28)
+
+
+def keep(citation):
+    title = get_safe(citation, "title", "") or ""
+
+    # must say where it was published
+    if not (get_safe(citation, "publisher", "") or "").strip():
+        log(f"Dropping (no publisher) {title[:45]}", indent=1)
+        return False
+
+    if not PRUNE_OLDER_THAN_YEARS:
+        return True
+
+    # some types are not indexed for citations at all
+    if get_safe(citation, "type", "") in PRUNE_EXEMPT_TYPES:
+        return True
+
+    # only older work is subject to the citation threshold
+    published = get_safe(citation, "date", "")
+    try:
+        published = datetime.strptime(published, "%Y-%m-%d").date()
+    except (ValueError, TypeError):
+        # no usable date, so age cannot be judged. keep it.
+        return True
+    if published >= cutoff:
+        return True
+
+    # how many times has it been cited
+    _id = str(get_safe(citation, "id", "") or "")
+    doi = _id[4:] if _id.startswith("doi:") else (_id if _id.startswith("10.") else None)
+    count = citation_count(doi, title)
+    if count is None:
+        # not found in openalex. treated as uncited, which is the point of the
+        # filter, but say so rather than letting it disappear quietly.
+        log(f"No citation count for {title[:45]}, treating as 0", indent=1, level="WARNING")
+        count = 0
+    if count < PRUNE_BELOW_CITATIONS:
+        log(f"Dropping ({count} citations, {published.year}) {title[:40]}", indent=1)
+        return False
+
+    return True
+
+
+before = len(citations)
+citations = [citation for citation in citations if keep(citation)]
+log(f"Kept {len(citations)} of {before} citation(s)", indent=1)
 
 
 log()

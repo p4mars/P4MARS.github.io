@@ -3,6 +3,8 @@ utility functions for cite process and plugins
 """
 
 import re
+from urllib.request import Request, urlopen
+from urllib.parse import quote
 import subprocess
 import json
 import yaml
@@ -95,6 +97,65 @@ def index_of(_list, value, fallback=float("inf")):
         return _list.index(value)
     except ValueError:
         return fallback
+
+
+@log_cache
+@cache.memoize(name="openalex", expire=30 * (60 * 60 * 24))
+def citation_count(doi, title):
+    """
+    look up how many times a work has been cited, via openalex.
+    returns None when the work cannot be found, which is not the same as zero.
+    """
+
+    def get(url):
+        request = Request(url, headers={"User-Agent": "lab-website-template"})
+        with urlopen(request, timeout=30) as response:
+            return json.load(response)
+
+    # look up by doi first, it is unambiguous
+    if doi:
+        try:
+            work = get(f"https://api.openalex.org/works/doi:{quote(doi, safe='')}")
+            if "cited_by_count" in work:
+                return work["cited_by_count"]
+        except Exception:
+            pass
+
+    # fall back to a title search, and only trust an unambiguous match
+    if title:
+        try:
+            found = get(
+                "https://api.openalex.org/works"
+                f"?filter=title.search:{quote(title, safe='')}&per-page=1"
+            )
+            result = (found.get("results") or [None])[0]
+            if result and normalize_title(result.get("title")) == normalize_title(title):
+                return result.get("cited_by_count")
+        except Exception:
+            pass
+
+    return None
+
+
+def arxiv_url(citation):
+    """
+    arxiv.org link for a work that is on arxiv, else None
+    """
+
+    _id = str(get_safe(citation, "id", "") or "")
+    # an arxiv doi, e.g. 10.48550/arXiv.2606.05975
+    match = re.search(r"10\.48550/arxiv\.([0-9]{4}\.[0-9]{4,5}(?:v[0-9]+)?)", _id, re.I)
+    if not match:
+        # manubot and orcid often only note it in the publisher field,
+        # e.g. "arXiv preprint arXiv:1506.04904"
+        match = re.search(
+            r"arxiv[:\s]\s*([0-9]{4}\.[0-9]{4,5}(?:v[0-9]+)?)",
+            str(get_safe(citation, "publisher", "") or ""),
+            re.I,
+        )
+    if not match:
+        return None
+    return f"https://arxiv.org/abs/{match.group(1)}"
 
 
 def normalize_title(title):
