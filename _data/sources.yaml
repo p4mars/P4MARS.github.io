@@ -90,3 +90,11 @@
 
 - title: Nanoscale Characterization of Nano-Liposome as Drug Delivery In vitro
   remove: true
+
+
+# ORCID lists this chapter without a DOI, so there is no id to merge on and no
+# link either. Patch one in by title. The URL is InTech's citation-PDF URL,
+# which redirects to the chapter PDF.
+- title: Multisensor Data Fusion Strategies for Advanced Driver Assistance Systems
+  merge: true
+  link: https://www.intechopen.com/citation-pdf-url/6084
