@@ -1,0 +1,65 @@
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 54px 24px 50px;
+  color: #e6edf5;
+  background: radial-gradient(ellipse 50% 160% at 86% 50%, rgba(56, 189, 248, 0.1490196078) 0%, transparent 70%), linear-gradient(110deg, var(--space) 0%, var(--space-alt) 100%);
+}
+
+.page-hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image: linear-gradient(to right, rgba(127, 220, 255, 0.1215686275) 1px, transparent 1px), linear-gradient(to bottom, rgba(127, 220, 255, 0.0784313725) 1px, transparent 1px);
+  background-size: 68px 68px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 45%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 45%, #000 100%);
+}
+
+.page-hero-mark {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  color: var(--glow);
+  font-size: 7rem;
+  opacity: 0.16;
+  transform: translateY(-50%);
+}
+
+.page-hero-inner {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.page-hero-eyebrow {
+  margin: 0 0 10px;
+  color: var(--glow);
+  font-family: var(--code);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.page-hero-title {
+  margin: 0;
+  font-family: var(--title);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: var(--bold);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .page-hero {
+    padding: 40px 20px 36px;
+  }
+  .page-hero-mark {
+    font-size: 4.5rem;
+    right: 4%;
+  }
+}
+
+/*# sourceMappingURL=page-hero.css.map */

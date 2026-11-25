@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+
+  <!-- Google Search Console ownership verification: keep this tag permanently -->
+<meta name="google-site-verification" content="ElIwrRfQtCuusZIyEs78LtkzuBZB5O1oubANdkIcjzQ">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Transferable Spatial Intelligence | p4MARS Lab</title>
+<meta name="description" content="Transferable Spatial Intelligence: open-vocabulary 3D scene graphs and vision-language models that tell robots where to act. Includes T-FunS3D (ICRA 2026).">
+<link rel="canonical" href="/preview/pr-13/projects/transferable-spatial-intelligence/">
+<link rel="icon" href="/preview/pr-13/images/logo.png">
+<link rel="alternate" type="application/rss+xml" title="p4MARS Lab" href="/preview/pr-13/feed.xml">
+
+<meta property="og:site_name" content="p4MARS Lab">
+<meta property="og:title" content="Transferable Spatial Intelligence | p4MARS Lab">
+<meta property="og:description" content="Transferable Spatial Intelligence: open-vocabulary 3D scene graphs and vision-language models that tell robots where to act. Includes T-FunS3D (ICRA 2026).">
+<meta property="og:url" content="/preview/pr-13/projects/transferable-spatial-intelligence/">
+<meta property="og:image" content="/preview/pr-13/images/share.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Transferable Spatial Intelligence | p4MARS Lab">
+<meta name="twitter:description" content="Transferable Spatial Intelligence: open-vocabulary 3D scene graphs and vision-language models that tell robots where to act. Includes T-FunS3D (ICRA 2026).">
+<meta name="twitter:image" content="/preview/pr-13/images/share.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Transferable Spatial Intelligence | p4MARS Lab",
+  "description": "Transferable Spatial Intelligence: open-vocabulary 3D scene graphs and vision-language models that tell robots where to act. Includes T-FunS3D (ICRA 2026).",
+  "url": "/preview/pr-13/projects/transferable-spatial-intelligence/",
+  "isPartOf": { "@type": "WebSite", "url": "/preview/pr-13/", "name": "p4MARS Lab" },
+  "about": {
+  "@type": "ResearchOrganization",
+  "@id": "/preview/pr-13/#lab",
+  "name": "p4MARS Lab",
+  "alternateName": "Perception and AI for Manufacturing Automation, Robotics, and Space",
+  "url": "/preview/pr-13/",
+  "logo": "/preview/pr-13/images/logo.png",
+  "email": "r.sabzevari@tudelft.nl",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kluyverweg 1",
+    "postalCode": "2629 HS",
+    "addressLocality": "Delft",
+    "addressCountry": "NL"
+  },
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": "Delft University of Technology",
+    "url": "https://www.tudelft.nl/en/"
+  },
+  "sameAs": ["https://github.com/p4mars"]
+}
+}
+</script>
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?display=swap&&family=Inter:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Plus+Jakarta%20Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet" media="none" onload="this.removeAttribute('media'); this.onload = null;">
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css" rel="stylesheet">
+
+<!-- include all sass in styles folder -->
+
+
+  
+    <link href="/preview/pr-13/_styles/-theme.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/alert.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/all.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/anchor.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/background.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/body.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/bold.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/button.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/card.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/checkbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/citation.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/code.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/cols.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/dark-toggle.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/details.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/event.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/feature.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/figure.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/float.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/font.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/footer.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/form.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/grid.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/header.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/heading.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/hero.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/highlight.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/icon.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/image.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/link.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/list.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/main.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/media.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/page-hero.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/paragraph.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/pillar.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/portrait.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/post-excerpt.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/post-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/post-nav.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/project.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/quote.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/rule.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/search-box.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/search-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/section.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/service.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/table.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/tags.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/textbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/tooltip.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-13/_styles/util.css" rel="stylesheet">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- include all css in styles folder -->
+
+
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/preview/pr-13/_scripts/anchors.js"></script>
+
+  <script src="/preview/pr-13/_scripts/dark-mode.js"></script>
+
+  <script src="/preview/pr-13/_scripts/fetch-tags.js"></script>
+
+  <script src="/preview/pr-13/_scripts/search.js"></script>
+
+  <script src="/preview/pr-13/_scripts/site-search.js"></script>
+
+  <script src="/preview/pr-13/_scripts/table-wrap.js"></script>
+
+  <script src="/preview/pr-13/_scripts/tooltip.js"></script>
+
+
+</head>
+
+  <body>
+    
+
+
+
+
+
+
+
+<header class="background" style="--image: url('')" data-dark="false">
+  <a href="/preview/pr-13/" class="home">
+    
+      <span class="logo">
+        
+          <img src="/preview/pr-13/images/logo.png" alt="logo">
+        
+      </span>
+    
+    
+      <span class="title-text" data-tooltip="Home">
+        
+          <span class="title">p4MARS Lab</span>
+        
+        
+          <span class="subtitle">Perception and AI for Manufacturing Automation, Robotics, and Space</span>
+        
+      </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <nav>
+    
+    
+    
+      
+        <a href="/preview/pr-13/research/" data-tooltip="Published works">
+          Research
+        </a>
+      
+    
+      
+        <a href="/preview/pr-13/projects/" aria-current="page" data-tooltip="Our research projects">
+          Projects
+        </a>
+      
+    
+      
+        <a href="/preview/pr-13/education/" data-tooltip="Courses and supervised theses">
+          Education
+        </a>
+      
+    
+      
+        <a href="/preview/pr-13/team/" data-tooltip="Members of our lab">
+          Team
+        </a>
+      
+    
+      
+        <a href="/preview/pr-13/vacancy/" data-tooltip="Open positions and thesis projects">
+          Vacancy
+        </a>
+      
+    
+      
+        <a href="/preview/pr-13/news/" data-tooltip="Lab news, talks and events">
+          News
+        </a>
+      
+    
+      
+        <a href="/preview/pr-13/media/" data-tooltip="Interviews, talks and press">
+          Media
+        </a>
+      
+    
+      
+        <a href="/preview/pr-13/contact/" data-tooltip="Email, address, and location">
+          Contact
+        </a>
+      
+    
+  </nav>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+
+
+
+
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <p class="eyebrow"><a href="/preview/pr-13/projects">Projects</a></p>
+
+<h1 id="transferable-spatial-intelligence">
+<i class="icon fa-solid fa-cube"></i>Transferable Spatial Intelligence</h1>
+
+<p>Robots that understand a 3D scene not only as geometry, but as objects, their functional parts, and what can be done with them, and that carry this understanding across environments, tasks and embodiments.</p>
+
+<p>We combine 3D scene graphs with vision-language foundation models to obtain open-vocabulary, task-driven perception that transfers to new settings without retraining. The goal is actionable perception: given a task in natural language, a robot should know where in the scene to look and where to act.</p>
+
+<div class="project-sponsors">
+<span class="project-links-label">Sponsored by</span>
+
+<a class="sponsor" href="https://www.tudelft.nl/en/ae" title="TU Delft Faculty of Aerospace Engineering" aria-label="TU Delft Faculty of Aerospace Engineering">
+
+<img src="/preview/pr-13/images/sponsors/tudelft.svg" alt="TU Delft Faculty of Aerospace Engineering logo" loading="lazy">
+
+<span class="sponsor-caption">Aerospace Engineering</span>
+</a>
+
+<a class="sponsor" href="https://www.tudelft.nl/en/robotics-institute" title="TU Delft Robotics Institute" aria-label="TU Delft Robotics Institute">
+
+<img src="/preview/pr-13/images/sponsors/tudelft.svg" alt="TU Delft Robotics Institute logo" loading="lazy">
+
+<span class="sponsor-caption">Robotics Institute</span>
+</a>
+
+</div>
+
+<div class="tags">
+    
+      <a href='/preview/pr-13/projects/transferable-spatial-intelligence/?search="tag:%20scene-understanding"' class="tag" data-tag="scene-understanding" data-tooltip='Show items with the tag "scene-understanding"'>
+        
+        scene-understanding
+      </a>
+    
+      <a href='/preview/pr-13/projects/transferable-spatial-intelligence/?search="tag:%20scene-graph"' class="tag" data-tag="scene-graph" data-tooltip='Show items with the tag "scene-graph"'>
+        
+        scene-graph
+      </a>
+    
+      <a href='/preview/pr-13/projects/transferable-spatial-intelligence/?search="tag:%20foundation-models"' class="tag" data-tag="foundation-models" data-tooltip='Show items with the tag "foundation-models"'>
+        
+        foundation-models
+      </a>
+    
+      <a href='/preview/pr-13/projects/transferable-spatial-intelligence/?search="tag:%20robotics"' class="tag" data-tag="robotics" data-tooltip='Show items with the tag "robotics"'>
+        
+        robotics
+      </a>
+    
+  </div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  <background></background>
+  <dark></dark>
+  <size></size>
+-->
+
+<h2 id="outcomes">Outcomes</h2>
+
+<div class="outcome">
+ 
+
+<div class="project" id="t-funs3d-task-driven-hierarchical-open-vocabulary-3d-functionality-segmentation">
+  <div class="project-text">
+    <span class="outcome-label">Publication · ICRA 2026</span>
+    <p class="project-title">
+      <span class="pillar-icon"><i class="icon fa-solid fa-file-lines"></i></span>
+      
+        <span>T-FunS3D: Task-Driven Hierarchical Open-Vocabulary 3D Functionality Segmentation</span>
+      
+    </p>
+    <p>T-FunS3D segments the functional parts of a 3D scene (handles, knobs, buttons, drawers) directly from a natural-language task description. It builds an open-vocabulary 3D scene graph from posed RGB-D frames and reasons hierarchically from the scene to objects to their functional parts, so a robot is told not just <em>what</em> is in the room but <em>where to act</em> to complete a task. Presented at the IEEE International Conference on Robotics and Automation (ICRA) 2026 in Vienna.</p>
+
+    
+      <div class="project-buttons">
+        
+          
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://t-funs3d.github.io/" data-tooltip="Website" data-style="bare" aria-label="Website">
+      <i class="icon fa-solid fa-globe"></i>
+      
+        <span>Project website</span>
+      
+    </a>
+  </div>
+
+
+        
+          
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://arxiv.org/abs/2606.05975v1" data-tooltip="Paper" data-style="bare" aria-label="Paper">
+      <i class="icon fa-solid fa-scroll"></i>
+      
+        <span>Paper</span>
+      
+    </a>
+  </div>
+
+
+        
+          
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://github.com/EdwardjkFeng/T-FunS3D" data-tooltip="Source code" data-style="bare" aria-label="Source code">
+      <i class="icon fa-solid fa-code"></i>
+      
+        <span>Code</span>
+      
+    </a>
+  </div>
+
+
+        
+      </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+
+
+
+
+
+
+    
+
+    
+  </div>
+  
+    <div class="project-image">
+      <img src="/preview/pr-13/images/research/T-FunS3D_teaser.webp" alt="T-FunS3D: Task-Driven Hierarchical Open-Vocabulary 3D Functionality Segmentation" loading="lazy" onerror="this.src = '/preview/pr-13/images/fallback.svg'; this.onerror = null;">
+    </div>
+  
+</div>
+
+</div>
+
+<div class="outcome">
+ 
+
+<div class="project" id="from-language-to-action-with-open-vocabulary-3d-scene-understanding">
+  <div class="project-text">
+    <span class="outcome-label">Demo · Robots in Business 2026 · RoboHouse, Delft · 19 Nov 2026</span>
+    <p class="project-title">
+      <span class="pillar-icon"><i class="icon fa-solid fa-robot"></i></span>
+      
+        <span>From Language to Action with Open-Vocabulary 3D Scene Understanding</span>
+      
+    </p>
+    <p>At Robots in Business 2026, the annual RoboHouse event on business applications of robotics and embodied AI, we demonstrate open-vocabulary navigation and manipulation built on T-FunS3D: a robot receives a task in plain language, finds the relevant object and functional part in the scene, and acts on it. The demo shows how transferable spatial intelligence moves from a research result to a working robot.</p>
+
+    
+      <div class="project-buttons">
+        
+          
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://robohouse.tudelftcampus.nl/events/robots-in-business-the-robots-are-here" data-tooltip="Link" data-style="bare" aria-label="Link">
+      <i class="icon fa-solid fa-globe"></i>
+      
+        <span>Event page</span>
+      
+    </a>
+  </div>
+
+
+        
+      </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+
+
+
+
+
+
+    
+
+    
+  </div>
+  
+    <div class="project-image">
+      <img src="/preview/pr-13/images/events/robots-in-business-2026.png" alt="From Language to Action with Open-Vocabulary 3D Scene Understanding" loading="lazy" onerror="this.src = '/preview/pr-13/images/fallback.svg'; this.onerror = null;">
+    </div>
+  
+</div>
+
+</div>
+  </section>
+
+
+    </main>
+    
+
+
+<footer class="background" style="--image: url('')" data-dark="false" data-size="wide">
+  <div class="footer-about">
+    <span class="footer-title">p4MARS Lab</span>
+    
+      <span>Faculty of Aerospace Engineering, Delft University of Technology</span>
+    
+    
+      <span class="footer-muted">Kluyverweg 1, 2629 HS Delft, The Netherlands</span>
+    
+  </div>
+
+  <div>
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="mailto:r.sabzevari@tudelft.nl" data-tooltip="Email" data-style="bare" aria-label="Email">
+      <i class="icon fa-solid fa-envelope"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://github.com/p4mars" data-tooltip="GitHub" data-style="bare" aria-label="GitHub">
+      <i class="icon fa-brands fa-github"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://www.linkedin.com/in/rezasabzevari" data-tooltip="LinkedIn" data-style="bare" aria-label="LinkedIn">
+      <i class="icon fa-brands fa-linkedin"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://www.youtube.com/@p4mars" data-tooltip="YouTube" data-style="bare" aria-label="YouTube">
+      <i class="icon fa-brands fa-youtube"></i>
+      
+    </a>
+  </div>
+
+
+    
+  </div>
+
+  <div class="footer-muted">
+    © 2026
+    p4MARS Lab
+      |   Built with
+    <a href="https://github.com/greenelab/lab-website-template">
+      Lab Website Template
+    </a>
+  </div>
+
+  <input type="checkbox" class="dark-toggle" data-tooltip="Dark mode" aria-label="toggle dark mode" oninput="onDarkToggleChange(event)">
+</footer>
+
+  </body>
+</html>
