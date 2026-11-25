@@ -42,6 +42,35 @@ button {
   color: var(--text);
 }
 
+.button[data-style=prominent] {
+  display: flex;
+  width: fit-content;
+  margin: 30px auto 10px auto;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-size: var(--large);
+  font-weight: var(--bold);
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent), var(--shadow);
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+.button[data-style=prominent] .icon {
+  font-size: 1.1em;
+}
+.button[data-style=prominent]:hover {
+  background: var(--primary);
+  box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent) 40%, transparent), var(--shadow);
+  transform: translateY(-2px);
+}
+.button[data-style=prominent]:focus-visible {
+  box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent) 50%, transparent), var(--shadow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button[data-style=prominent]:hover {
+    transform: none;
+  }
+}
 .button[data-flip] {
   flex-direction: row-reverse;
 }
