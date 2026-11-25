@@ -110,6 +110,7 @@
   reza-sabzevari: true
   plugin: orcid.py
   file: orcid.yaml
+  link: https://www.intechopen.com/citation-pdf-url/6084
 - id: doi:10.1016/j.neucom.2008.05.011
   title: Three-phase strategy for the OSD learning method in RBF neural networks
   authors:

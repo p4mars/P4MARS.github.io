@@ -142,6 +142,24 @@ removed_titles = {
     and not get_safe(source, "id", "")
 }
 
+# sources flagged with merge patch fields onto a citation that a metasource
+# already supplies, matched by title. sources that carry an id are merged by id
+# above; this covers the ones that do not, where there is nothing else to match
+# on. the flagged source is not emitted as a citation of its own.
+merged_by_title = {}
+for source in sources:
+    if get_safe(source, "merge", False) != True:
+        continue
+    key = normalize_title(get_safe(source, "title", ""))
+    if not key:
+        errors.append("Source flagged with merge has no title to match on")
+        continue
+    merged_by_title[key] = {
+        field: value
+        for field, value in source.items()
+        if field not in ("merge", "title", "plugin", "file")
+    }
+
 
 # loop through compiled sources
 for index, source in enumerate(sources):
@@ -149,6 +167,10 @@ for index, source in enumerate(sources):
 
     # if explicitly flagged, remove/ignore entry
     if get_safe(source, "remove", False) == True:
+        continue
+
+    # if flagged for merging, it only patches another citation
+    if get_safe(source, "merge", False) == True:
         continue
 
     # new citation data for source
@@ -236,6 +258,22 @@ removed = len(citations) - len(deduped)
 if removed:
     log(f"Removed {removed} duplicate citation(s)", indent=1)
 citations = list(deduped.values())
+
+
+log()
+
+
+# apply fields from sources flagged with merge
+if merged_by_title:
+    unmatched = set(merged_by_title)
+    for citation in citations:
+        key = normalize_title(get_safe(citation, "title", ""))
+        if key in merged_by_title:
+            citation.update(merged_by_title[key])
+            unmatched.discard(key)
+            log(f"Merged fields into {get_safe(citation, 'title', '')[:45]}", indent=1)
+    for key in unmatched:
+        warnings.append(f"Source flagged with merge matched no citation: {key}")
 
 
 log()
