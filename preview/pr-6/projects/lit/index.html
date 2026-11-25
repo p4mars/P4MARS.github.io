@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+
+  <!-- Google Search Console ownership verification: keep this tag permanently -->
+<meta name="google-site-verification" content="ElIwrRfQtCuusZIyEs78LtkzuBZB5O1oubANdkIcjzQ">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Luchtvaart in Transitie (LiT) | p4MARS Lab</title>
+<meta name="description" content="Luchtvaart in Transitie (LiT): p4MARS develops 3D modeling of manufacturing processes and automated non-destructive testing for climate-neutral aviation.">
+<link rel="canonical" href="/preview/pr-6/projects/lit/">
+<link rel="icon" href="/preview/pr-6/images/logo.png">
+<link rel="alternate" type="application/rss+xml" title="p4MARS Lab" href="/preview/pr-6/feed.xml">
+
+<meta property="og:site_name" content="p4MARS Lab">
+<meta property="og:title" content="Luchtvaart in Transitie (LiT) | p4MARS Lab">
+<meta property="og:description" content="Luchtvaart in Transitie (LiT): p4MARS develops 3D modeling of manufacturing processes and automated non-destructive testing for climate-neutral aviation.">
+<meta property="og:url" content="/preview/pr-6/projects/lit/">
+<meta property="og:image" content="/preview/pr-6/images/share.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Luchtvaart in Transitie (LiT) | p4MARS Lab">
+<meta name="twitter:description" content="Luchtvaart in Transitie (LiT): p4MARS develops 3D modeling of manufacturing processes and automated non-destructive testing for climate-neutral aviation.">
+<meta name="twitter:image" content="/preview/pr-6/images/share.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Luchtvaart in Transitie (LiT) | p4MARS Lab",
+  "description": "Luchtvaart in Transitie (LiT): p4MARS develops 3D modeling of manufacturing processes and automated non-destructive testing for climate-neutral aviation.",
+  "url": "/preview/pr-6/projects/lit/",
+  "isPartOf": { "@type": "WebSite", "url": "/preview/pr-6/", "name": "p4MARS Lab" },
+  "about": {
+  "@type": "ResearchOrganization",
+  "@id": "/preview/pr-6/#lab",
+  "name": "p4MARS Lab",
+  "alternateName": "Perception and AI for Manufacturing Automation, Robotics, and Space",
+  "url": "/preview/pr-6/",
+  "logo": "/preview/pr-6/images/logo.png",
+  "email": "r.sabzevari@tudelft.nl",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kluyverweg 1",
+    "postalCode": "2629 HS",
+    "addressLocality": "Delft",
+    "addressCountry": "NL"
+  },
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": "Delft University of Technology",
+    "url": "https://www.tudelft.nl/en/"
+  },
+  "sameAs": ["https://github.com/p4mars"]
+}
+}
+</script>
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?display=swap&&family=Inter:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Plus+Jakarta%20Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet" media="none" onload="this.removeAttribute('media'); this.onload = null;">
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css" rel="stylesheet">
+
+<!-- include all sass in styles folder -->
+
+
+  
+    <link href="/preview/pr-6/_styles/-theme.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/alert.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/all.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/anchor.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/background.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/body.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/bold.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/button.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/card.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/checkbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/citation.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/code.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/cols.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/dark-toggle.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/details.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/event.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/feature.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/figure.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/float.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/font.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/footer.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/form.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/grid.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/header.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/heading.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/hero.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/highlight.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/icon.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/image.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/link.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/list.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/main.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/media.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/page-hero.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/paragraph.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/pillar.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/portrait.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/post-excerpt.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/post-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/post-nav.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/project.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/quote.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/rule.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/search-box.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/search-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/section.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/service.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/table.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/tags.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/textbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/tooltip.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/util.css" rel="stylesheet">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- include all css in styles folder -->
+
+
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/preview/pr-6/_scripts/anchors.js"></script>
+
+  <script src="/preview/pr-6/_scripts/dark-mode.js"></script>
+
+  <script src="/preview/pr-6/_scripts/fetch-tags.js"></script>
+
+  <script src="/preview/pr-6/_scripts/search.js"></script>
+
+  <script src="/preview/pr-6/_scripts/site-search.js"></script>
+
+  <script src="/preview/pr-6/_scripts/table-wrap.js"></script>
+
+  <script src="/preview/pr-6/_scripts/tooltip.js"></script>
+
+
+</head>
+
+  <body>
+    
+
+
+
+
+
+
+
+<header class="background" style="--image: url('')" data-dark="false">
+  <a href="/preview/pr-6/" class="home">
+    
+      <span class="logo">
+        
+          <img src="/preview/pr-6/images/logo.png" alt="logo">
+        
+      </span>
+    
+    
+      <span class="title-text" data-tooltip="Home">
+        
+          <span class="title">p4MARS Lab</span>
+        
+        
+          <span class="subtitle">Perception and AI for Manufacturing Automation, Robotics, and Space</span>
+        
+      </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <nav>
+    
+    
+    
+      
+        <a href="/preview/pr-6/research/" data-tooltip="Published works">
+          Research
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/projects/" aria-current="page" data-tooltip="Our research projects">
+          Projects
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/education/" data-tooltip="Courses and supervised theses">
+          Education
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/team/" data-tooltip="Members of our lab">
+          Team
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/vacancy/" data-tooltip="Open positions and thesis projects">
+          Vacancy
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/news/" data-tooltip="Lab news, talks and events">
+          News
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/media/" data-tooltip="Interviews, talks and press">
+          Media
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/contact/" data-tooltip="Email, address, and location">
+          Contact
+        </a>
+      
+    
+  </nav>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+
+
+
+
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <p class="eyebrow"><a href="/preview/pr-6/projects">Projects</a></p>
+
+<h1 id="luchtvaart-in-transitie-lit">
+<i class="icon fa-solid fa-plane"></i>Luchtvaart in Transitie (LiT)</h1>
+
+<p>Luchtvaart in Transitie is a Dutch national programme that brings together government, knowledge institutes and industry to accelerate the transition to climate-neutral aviation by 2050. Within LiT, p4MARS contributes perception and AI for the production and maintenance of next-generation aircraft through two activities: fine-detailed 3D modeling for monitoring manufacturing processes, and automated non-destructive testing.</p>
+
+<div class="project-sponsors">
+<span class="project-links-label">Sponsored by</span>
+
+<a class="sponsor" href="https://www.nationaalgroeifonds.nl/english" title="Dutch National Growth Fund" aria-label="Dutch National Growth Fund">
+
+<span class="sponsor-text">Nationaal Groeifonds</span>
+
+<span class="sponsor-caption">National Growth Fund</span>
+</a>
+
+</div>
+
+<div class="button-wrapper">
+    <a class="button" href="https://luchtvaartintransitie.nl/en/" data-tooltip="Website" data-style="bare" aria-label="Website">
+      <i class="icon fa-solid fa-globe"></i>
+      
+        <span>Luchtvaart in Transitie</span>
+      
+    </a>
+  </div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  <background></background>
+  <dark></dark>
+  <size></size>
+-->
+
+<h2 id="activities">Activities</h2>
+
+<div class="project" id="fine-detailed-3d-modeling-for-monitoring-manufacturing-processes">
+  <div class="project-text">
+    
+    <p class="project-title">
+      <span class="pillar-icon"><i class="icon fa-solid fa-industry"></i></span>
+      
+        <span>Fine-Detailed 3D Modeling for Monitoring Manufacturing Processes</span>
+      
+    </p>
+    <p>Advanced manufacturing needs to see what is happening to a part while it is being made. We develop high-fidelity 3D and 4D reconstruction methods that capture fine geometric detail and its evolution over time, turning sensor streams into evolving digital twins of the process. Applications include in-process inspection and quality control, and the manufacturing and recycling of composite structures.</p>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+          
+          
+    
+    
+      <div class="project-activities">
+        <span class="project-links-label">Research pillars</span>
+        
+          <a class="project-vacancy" href="/preview/pr-6/research#evolving-digital-twins">
+            <i class="icon fa-solid fa-diagram-project"></i> Evolving Digital Twins
+          </a>
+        
+      </div>
+    
+    
+
+
+
+
+
+
+    
+
+    
+      
+
+
+  <div class="tags">
+    
+      <a href='/preview/pr-6/projects/lit/?search="tag:%204d-reconstruction"' class="tag" data-tag="4d-reconstruction" data-tooltip='Show items with the tag "4d-reconstruction"'>
+        
+        4d-reconstruction
+      </a>
+    
+      <a href='/preview/pr-6/projects/lit/?search="tag:%20digital-twins"' class="tag" data-tag="digital-twins" data-tooltip='Show items with the tag "digital-twins"'>
+        
+        digital-twins
+      </a>
+    
+  </div>
+
+
+    
+  </div>
+  
+    <div class="project-image">
+      <img src="/preview/pr-6/images/projects/manufacturing-3d.svg" alt="Fine-Detailed 3D Modeling for Monitoring Manufacturing Processes" loading="lazy" onerror="this.src = '/preview/pr-6/images/fallback.svg'; this.onerror = null;">
+    </div>
+  
+</div>
+
+<div class="project" id="automated-non-destructive-testing-ndt">
+  <div class="project-text">
+    
+    <p class="project-title">
+      <span class="pillar-icon"><i class="icon fa-solid fa-magnifying-glass-chart"></i></span>
+      
+        <span>Automated Non-Destructive Testing (NDT)</span>
+      
+    </p>
+    <p>Inspecting aircraft structures for hidden damage is slow, manual work. We develop robotic, perception-driven non-destructive testing that plans and executes inspections autonomously, registers sensor data to a digital model of the part, and flags defects for maintenance.</p>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+      
+        
+      
+        
+          
+          
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      <div class="project-activities">
+        <span class="project-links-label">Research pillars</span>
+        
+          <a class="project-vacancy" href="/preview/pr-6/research#actionable-world-models">
+            <i class="icon fa-solid fa-earth-europe"></i> Actionable World Models
+          </a>
+        
+      </div>
+    
+    
+
+
+
+
+
+  <div class="project-links">
+  
+  
+  <div class="project-vacancies">
+  <span class="project-links-label">Open positions</span>
+  
+  <a class="project-vacancy" href="/preview/pr-6/vacancy/postdoc-lit/">
+  <i class="icon fa-solid fa-user-plus"></i> Postdoctoral Researcher (LiT)
+  </a>
+  
+  </div>
+  
+  </div>
+
+
+    
+
+    
+      
+
+
+  <div class="tags">
+    
+      <a href='/preview/pr-6/projects/lit/?search="tag:%20inspection"' class="tag" data-tag="inspection" data-tooltip='Show items with the tag "inspection"'>
+        
+        inspection
+      </a>
+    
+      <a href='/preview/pr-6/projects/lit/?search="tag:%20ndt"' class="tag" data-tag="ndt" data-tooltip='Show items with the tag "ndt"'>
+        
+        ndt
+      </a>
+    
+  </div>
+
+
+    
+  </div>
+  
+    <div class="project-image">
+      <img src="/preview/pr-6/images/projects/automated-ndt.svg" alt="Automated Non-Destructive Testing NDT" loading="lazy" onerror="this.src = '/preview/pr-6/images/fallback.svg'; this.onerror = null;">
+    </div>
+  
+</div>
+  </section>
+
+
+    </main>
+    
+
+
+<footer class="background" style="--image: url('')" data-dark="false" data-size="wide">
+  <div class="footer-about">
+    <span class="footer-title">p4MARS Lab</span>
+    
+      <span>Faculty of Aerospace Engineering, Delft University of Technology</span>
+    
+    
+      <span class="footer-muted">Kluyverweg 1, 2629 HS Delft, The Netherlands</span>
+    
+  </div>
+
+  <div>
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="mailto:r.sabzevari@tudelft.nl" data-tooltip="Email" data-style="bare" aria-label="Email">
+      <i class="icon fa-solid fa-envelope"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://github.com/p4mars" data-tooltip="GitHub" data-style="bare" aria-label="GitHub">
+      <i class="icon fa-brands fa-github"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://www.linkedin.com/in/rezasabzevari" data-tooltip="LinkedIn" data-style="bare" aria-label="LinkedIn">
+      <i class="icon fa-brands fa-linkedin"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://www.youtube.com/@p4mars" data-tooltip="YouTube" data-style="bare" aria-label="YouTube">
+      <i class="icon fa-brands fa-youtube"></i>
+      
+    </a>
+  </div>
+
+
+    
+  </div>
+
+  <div class="footer-muted">
+    © 2026
+    p4MARS Lab
+      |   Built with
+    <a href="https://github.com/greenelab/lab-website-template">
+      Lab Website Template
+    </a>
+  </div>
+
+  <input type="checkbox" class="dark-toggle" data-tooltip="Dark mode" aria-label="toggle dark mode" oninput="onDarkToggleChange(event)">
+</footer>
+
+  </body>
+</html>

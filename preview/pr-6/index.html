@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+
+  <!-- Google Search Console ownership verification: keep this tag permanently -->
+<meta name="google-site-verification" content="ElIwrRfQtCuusZIyEs78LtkzuBZB5O1oubANdkIcjzQ">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>p4MARS Lab, TU Delft | Perception &amp; AI for Robotics and Space</title>
+<meta name="description" content="The p4MARS Lab at TU Delft builds perception and world models for robots in manufacturing and space: 3D scene understanding, SLAM and digital twins.">
+<link rel="canonical" href="/preview/pr-6/">
+<link rel="icon" href="/preview/pr-6/images/logo.png">
+<link rel="alternate" type="application/rss+xml" title="p4MARS Lab" href="/preview/pr-6/feed.xml">
+
+<meta property="og:site_name" content="p4MARS Lab">
+<meta property="og:title" content="p4MARS Lab, TU Delft | Perception &amp; AI for Robotics and Space">
+<meta property="og:description" content="The p4MARS Lab at TU Delft builds perception and world models for robots in manufacturing and space: 3D scene understanding, SLAM and digital twins.">
+<meta property="og:url" content="/preview/pr-6/">
+<meta property="og:image" content="/preview/pr-6/images/share.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="p4MARS Lab, TU Delft | Perception &amp; AI for Robotics and Space">
+<meta name="twitter:description" content="The p4MARS Lab at TU Delft builds perception and world models for robots in manufacturing and space: 3D scene understanding, SLAM and digital twins.">
+<meta name="twitter:image" content="/preview/pr-6/images/share.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+  "@type": "ResearchOrganization",
+  "@id": "/preview/pr-6/#lab",
+  "name": "p4MARS Lab",
+  "alternateName": "Perception and AI for Manufacturing Automation, Robotics, and Space",
+  "url": "/preview/pr-6/",
+  "logo": "/preview/pr-6/images/logo.png",
+  "email": "r.sabzevari@tudelft.nl",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kluyverweg 1",
+    "postalCode": "2629 HS",
+    "addressLocality": "Delft",
+    "addressCountry": "NL"
+  },
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": "Delft University of Technology",
+    "url": "https://www.tudelft.nl/en/"
+  },
+  "sameAs": ["https://github.com/p4mars"]
+},
+    {
+      "@type": "WebSite",
+      "@id": "/preview/pr-6/#website",
+      "name": "p4MARS Lab",
+      "url": "/preview/pr-6/",
+      "publisher": { "@id": "/preview/pr-6/#lab" }
+    }
+  ]
+}
+</script>
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?display=swap&&family=Inter:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&amp;family=Plus+Jakarta%20Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet" media="none" onload="this.removeAttribute('media'); this.onload = null;">
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css" rel="stylesheet">
+
+<!-- include all sass in styles folder -->
+
+
+  
+    <link href="/preview/pr-6/_styles/-theme.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/alert.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/all.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/anchor.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/background.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/body.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/bold.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/button.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/card.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/checkbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/citation.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/code.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/cols.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/dark-toggle.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/details.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/event.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/feature.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/figure.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/float.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/font.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/footer.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/form.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/grid.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/header.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/heading.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/hero.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/highlight.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/icon.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/image.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/link.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/list.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/main.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/media.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/page-hero.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/paragraph.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/pillar.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/portrait.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/post-excerpt.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/post-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/post-nav.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/project.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/quote.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/rule.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/search-box.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/search-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/section.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/service.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/table.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/tags.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/textbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/tooltip.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-6/_styles/util.css" rel="stylesheet">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!-- include all css in styles folder -->
+
+
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/preview/pr-6/_scripts/anchors.js"></script>
+
+  <script src="/preview/pr-6/_scripts/dark-mode.js"></script>
+
+  <script src="/preview/pr-6/_scripts/fetch-tags.js"></script>
+
+  <script src="/preview/pr-6/_scripts/search.js"></script>
+
+  <script src="/preview/pr-6/_scripts/site-search.js"></script>
+
+  <script src="/preview/pr-6/_scripts/table-wrap.js"></script>
+
+  <script src="/preview/pr-6/_scripts/tooltip.js"></script>
+
+
+</head>
+
+  <body>
+    
+
+
+
+
+
+
+
+<header class="background" style="--image: url('')" data-dark="false">
+  <a href="/preview/pr-6/" class="home">
+    
+      <span class="logo">
+        
+          <img src="/preview/pr-6/images/logo.png" alt="logo">
+        
+      </span>
+    
+    
+      <span class="title-text" data-tooltip="Home">
+        
+          <span class="title">p4MARS Lab</span>
+        
+        
+          <span class="subtitle">Perception and AI for Manufacturing Automation, Robotics, and Space</span>
+        
+      </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <nav>
+    
+    
+    
+      
+        <a href="/preview/pr-6/research/" data-tooltip="Published works">
+          Research
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/projects/" data-tooltip="Our research projects">
+          Projects
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/education/" data-tooltip="Courses and supervised theses">
+          Education
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/team/" data-tooltip="Members of our lab">
+          Team
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/vacancy/" data-tooltip="Open positions and thesis projects">
+          Vacancy
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/news/" data-tooltip="Lab news, talks and events">
+          News
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/media/" data-tooltip="Interviews, talks and press">
+          Media
+        </a>
+      
+    
+      
+        <a href="/preview/pr-6/contact/" data-tooltip="Email, address, and location">
+          Contact
+        </a>
+      
+    
+  </nav>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+
+
+
+
+
+  
+  
+  
+
+  <section class="background" data-size="full">
+    <!--
+  <background></background>
+  <dark></dark>
+  <size>full</size>
+-->
+
+<div class="hero" data-dark="true" data-banner="true">
+  
+    <div class="hero-banner">
+      <img src="/preview/pr-6/images/hero-banner.svg" alt="A robot arm and its glowing digital twin, with the p4MARS logo">
+    </div>
+  
+  <div class="hero-stars" aria-hidden="true"></div>
+  <div class="hero-orbit" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      
+        <p class="hero-eyebrow">TU Delft · Aerospace Engineering</p>
+      
+      <p class="hero-title">Perception and AI for <strong>Manufacturing Automation</strong>, <strong>Robotics</strong> and <strong>Space</strong></p>
+      
+        <p class="hero-text">p4MARS builds the perception and world models that let autonomous systems understand, act in, and adapt to complex, dynamic and unstructured environments, from the factory floor to orbit.</p>
+      
+      <div class="hero-actions">
+        
+          <a class="hero-button" href="/preview/pr-6/research">
+            Explore our research
+            <i class="icon fa-solid fa-arrow-right"></i>
+          </a>
+        
+        
+          <a class="hero-button" data-style="ghost" href="/preview/pr-6/vacancy">
+            Join the lab
+          </a>
+        
+      </div>
+    </div>
+    
+  </div>
+</div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  <background></background>
+  <dark></dark>
+  <size></size>
+-->
+
+<h2 class="section-title">About</h2>
+
+<h3 id="robust-autonomy-through-perception">Robust autonomy through perception</h3>
+
+<p>The p4MARS Lab is an interdisciplinary research group focused on Perception and AI for Manufacturing Automation, Robotics, and Space, working at the intersection of robotics, agentic AI, and cognitive systems.
+We target two classes of problems: automating high-variation tasks in complex and dynamic environments, such as inspection, repair and maintenance, and advanced manufacturing; and building the intelligence behind adaptive, resilient autonomous systems for extreme and unstructured environments, notably space.</p>
+
+<p>Robust autonomy is achieved through advanced perception coupled with high-fidelity digital models that mirror the physical world, enabling embodied and physically grounded intelligence.</p>
+
+<div class="pillars">
+  
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+    
+
+     
+<div class="pillar">
+  
+    <span class="pillar-icon"><i class="icon fa-solid fa-cube"></i></span>
+  
+  <p class="pillar-title">
+    
+      <a href="/preview/pr-6/research">Spatial &amp; Agentic Intelligence</a>
+    
+  </p>
+  
+    <p class="pillar-text">Geometric and semantic scene understanding, 3D scene graphs, and open-vocabulary perception that let robots reason about where things are and what they can do with them.
+</p>
+  
+</div>
+
+  
+    
+
+     
+<div class="pillar">
+  
+    <span class="pillar-icon"><i class="icon fa-solid fa-earth-europe"></i></span>
+  
+  <p class="pillar-title">
+    
+      <a href="/preview/pr-6/research">Actionable World Models</a>
+    
+  </p>
+  
+    <p class="pillar-text">Interaction-aware models of the physical world that couple perception with action, supporting active and distributed perception for embodied, physically grounded agents.
+</p>
+  
+</div>
+
+  
+    
+
+     
+<div class="pillar">
+  
+    <span class="pillar-icon"><i class="icon fa-solid fa-diagram-project"></i></span>
+  
+  <p class="pillar-title">
+    
+      <a href="/preview/pr-6/research">Evolving Digital Twins</a>
+    
+  </p>
+  
+    <p class="pillar-text">High-fidelity digital models that stay in sync with a changing environment, from dynamic SLAM to 4D reconstruction of manufacturing processes.
+</p>
+  
+</div>
+
+  
+
+
+</div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  <background></background>
+  <dark></dark>
+  <size></size>
+-->
+
+<h2 class="section-title">Lab lead</h2>
+
+<h3 id="reza-sabzevari">Reza Sabzevari</h3>
+
+<div class="lead">
+  
+
+
+
+<div class="portrait-wrapper">
+  <a href="/preview/pr-6/members/reza-sabzevari.html" class="portrait" data-style="" aria-label="Reza Sabzevari">
+    
+      <i class="icon fa-solid fa-microscope"></i>
+    
+
+    <img src="/preview/pr-6/images/member/r_sabzevari.jpg" class="portrait-image" alt="Reza Sabzevari, p4MARS Lab" loading="lazy" onerror="this.src = '/preview/pr-6/images/fallback.svg'; this.onerror = null;">
+
+    
+      <span class="portrait-name">
+        Reza Sabzevari
+      </span>
+    
+
+    
+      <span class="portrait-description">
+        Associate Professor
+      </span>
+    
+
+    
+      <span class="portrait-affiliation">
+        TU Delft | AE
+      </span>
+    
+
+    
+  </a>
+</div>
+
+  <div class="lead-text">
+
+    <p>Reza is an Associate Professor of Robotics and Perception. He leads the p4MARS Lab: an interdisciplinary research group focused on Perception and AI for Manufacturing Automation, Robotics, and Space.</p>
+
+    <p>Before joining TU Delft, Reza was a senior scientist at Bosch Research and the Bosch Centre for Artificial Intelligence (BCAI) in Germany, where he founded the x.Lab, a playground for experimenting robot perception algorithms. His research interests include geometric and semantic scene understanding, active perception, and distributed perception, with the application to advanced robotics automation and space domains.</p>
+
+    <div class="button-wrapper">
+    <a class="button" href="/preview/pr-6/members/reza-sabzevari.html" data-style="bare" data-flip="" aria-label="fa-solid fa-arrow-right">
+      <i class="icon fa-solid fa-arrow-right"></i>
+      
+        <span>Full profile</span>
+      
+    </a>
+  </div>
+
+  </div>
+</div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  <background></background>
+  <dark></dark>
+  <size></size>
+-->
+
+<div class="cta">
+  <div>
+    <p class="cta-title">Work with us</p>
+    <p class="cta-text">We are looking for PhD candidates, thesis students and teaching assistants who want to build perception for real robots.</p>
+  </div>
+  <div class="hero-actions">
+    <a class="hero-button" href="/preview/pr-6/vacancy">Open positions <i class="icon fa-solid fa-arrow-right"></i></a>
+    <a class="hero-button" data-style="ghost" href="/preview/pr-6/team">Meet the team</a>
+  </div>
+</div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  <background></background>
+  <dark></dark>
+  <size></size>
+-->
+
+<h2 class="section-title">Highlight</h2>
+
+<h3 id="featured-publication">Featured publication</h3>
+
+<div class="citation-container">
+  <div class="citation">
+    
+      <a href="https://t-funs3d.github.io/" class="citation-image" aria-label="T-FunS3D: Task-Driven Hierarchical Open-Vocabulary 3D Functionality Segmentation">
+        <img src="/preview/pr-6/images/research/T-FunS3D_teaser.webp" alt="T-FunS3D: Task-Driven Hierarchical Open-Vocabulary 3D Functionality Segmentation" loading="lazy" onerror="this.src = '/preview/pr-6/images/fallback.svg'; this.onerror = null;">
+      </a>
+    
+
+    <div class="citation-text">
+      
+      <i class="icon fa-solid fa-scroll"></i>
+
+      <a href="https://t-funs3d.github.io/" class="citation-title">
+        T-FunS3D: Task-Driven Hierarchical Open-Vocabulary 3D Functionality Segmentation
+      </a>
+
+      <div class="citation-authors" tabindex="0">
+        Jingkun Feng, Reza Sabzevari
+
+      </div>
+
+      <div class="citation-details">
+        <span class="citation-publisher">IEEE Intl. Conf. on Robotics and Automation (ICRA) 2026</span>
+        <!-- &nbsp;·&nbsp;
+        <span class="citation-date">01 Jun 2026</span>
+        &nbsp;·&nbsp;
+        <span class="citation-id">[no id info]</span> -->
+      </div>
+
+      
+        
+          <div class="citation-description">
+            We introduce T-FunS3D, a task-driven hierarchical open-vocabulary 3D functionality segmentation method that provides actionable perception for robotic applications.
+
+          </div>
+        
+
+        
+          <div class="citation-buttons">
+            
+              
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://arxiv.org/abs/2606.05975v1" data-tooltip="Paper" data-style="bare" aria-label="Paper">
+      <i class="icon fa-solid fa-scroll"></i>
+      
+        <span>PDF</span>
+      
+    </a>
+  </div>
+
+
+            
+              
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://t-funs3d.github.io/" data-tooltip="Website" data-style="bare" aria-label="Website">
+      <i class="icon fa-solid fa-globe"></i>
+      
+        <span>Website</span>
+      
+    </a>
+  </div>
+
+
+            
+              
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://github.com/EdwardjkFeng/T-FunS3D" data-tooltip="Source code" data-style="bare" aria-label="Source code">
+      <i class="icon fa-solid fa-code"></i>
+      
+        <span>Github</span>
+      
+    </a>
+  </div>
+
+
+            
+          </div>
+        
+
+        
+          
+
+
+  <div class="tags">
+    
+      <a href='/preview/pr-6/?search="tag:%20scene-understanding"' class="tag" data-tag="scene-understanding" data-tooltip='Show items with the tag "scene-understanding"'>
+        
+        scene-understanding
+      </a>
+    
+      <a href='/preview/pr-6/?search="tag:%20scene-graph"' class="tag" data-tag="scene-graph" data-tooltip='Show items with the tag "scene-graph"'>
+        
+        scene-graph
+      </a>
+    
+      <a href='/preview/pr-6/?search="tag:%20robotics"' class="tag" data-tag="robotics" data-tooltip='Show items with the tag "robotics"'>
+        
+        robotics
+      </a>
+    
+  </div>
+
+
+        
+      
+    </div>
+  </div>
+</div>
+
+<div class="button-wrapper">
+    <a class="button" href="/preview/pr-6/research" data-style="bare" data-flip="" aria-label="fa-solid fa-arrow-right">
+      <i class="icon fa-solid fa-arrow-right"></i>
+      
+        <span>Our research</span>
+      
+    </a>
+  </div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  <background></background>
+  <dark></dark>
+  <size></size>
+-->
+
+<h2 class="section-title">News</h2>
+
+<h3 id="latest-news">Latest news</h3>
+
+<div class="event">
+  <div class="event-content">
+    <div class="event-text">
+      <div class="event-title-row">
+        
+          <a class="event-title" href="https://robohouse.tudelftcampus.nl/events/robots-in-business-the-robots-are-here">
+            p4MARS joins Robots in Business
+          </a>
+        
+      </div>
+
+      
+        <p class="event-description">
+          p4MARS takes part in Robots in Business, the annual RoboHouse event on business applications of robotics and embodied AI, with a live demo of open-vocabulary navigation and manipulation built on T-FunS3D.
+
+        </p>
+      
+
+      <div class="event-meta" data-search="RoboHouse, Molengraaffsingel 29, Delft 2026-11-19 ">
+        <span class="event-date">
+          
+            Nov 19, 2026
+          
+          
+        </span>
+        
+          <span class="event-sep">·</span>
+          <span class="event-venue">RoboHouse, Molengraaffsingel 29, Delft</span>
+        
+      </div>
+    </div>
+    
+      
+      
+        <a href="https://robohouse.tudelftcampus.nl/events/robots-in-business-the-robots-are-here" class="event-image" aria-label="p4MARS joins Robots in Business">
+          <img src="/preview/pr-6/images/events/robots-in-business-2026.png" alt="p4MARS joins Robots in Business" loading="lazy" onerror="this.src = '/preview/pr-6/images/fallback.svg'; this.onerror = null;">
+        </a>
+      
+    
+  </div>
+</div>
+
+<div class="event">
+  <div class="event-content">
+    <div class="event-text">
+      <div class="event-title-row">
+        
+          <a class="event-title" href="/preview/pr-6/members/saman-behrouzi.html">
+            Welcome, Saman Behrouzi
+          </a>
+        
+      </div>
+
+      
+        <p class="event-description">
+          Saman Behrouzi joins p4MARS as a postdoctoral researcher, working on modeling and simulation of disruption for resilient infrastructures.
+
+        </p>
+      
+
+      <div class="event-meta" data-search="TU Delft 2026-10-01 ">
+        <span class="event-date">
+          
+            October 2026
+          
+          
+        </span>
+        
+          <span class="event-sep">·</span>
+          <span class="event-venue">TU Delft</span>
+        
+      </div>
+    </div>
+    
+      
+      
+        <a href="/preview/pr-6/members/saman-behrouzi.html" class="event-image" aria-label="Welcome, Saman Behrouzi">
+          <img src="/preview/pr-6/images/member/s_behrouzi.jpg" alt="Welcome, Saman Behrouzi" loading="lazy" onerror="this.src = '/preview/pr-6/images/fallback.svg'; this.onerror = null;">
+        </a>
+      
+    
+  </div>
+</div>
+
+<div class="event">
+  <div class="event-content">
+    <div class="event-text">
+      <div class="event-title-row">
+        
+          <a class="event-title" href="/preview/pr-6/members/antreas-kourris.html">
+            Welcome, Antreas Kourris
+          </a>
+        
+      </div>
+
+      
+        <p class="event-description">
+          Antreas Kourris joins p4MARS as a research assistant, working on transferable spatial intelligence.
+
+        </p>
+      
+
+      <div class="event-meta" data-search="TU Delft 2026-10-01 ">
+        <span class="event-date">
+          
+            October 2026
+          
+          
+        </span>
+        
+          <span class="event-sep">·</span>
+          <span class="event-venue">TU Delft</span>
+        
+      </div>
+    </div>
+    
+      
+      
+        <a href="/preview/pr-6/members/antreas-kourris.html" class="event-image" aria-label="Welcome, Antreas Kourris">
+          <img src="/preview/pr-6/images/member/a_kourris.jpg" alt="Welcome, Antreas Kourris" loading="lazy" onerror="this.src = '/preview/pr-6/images/fallback.svg'; this.onerror = null;">
+        </a>
+      
+    
+  </div>
+</div>
+
+<div class="event">
+  <div class="event-content">
+    <div class="event-text">
+      <div class="event-title-row">
+        
+          <a class="event-title" href="/preview/pr-6/members/philipp-kunze.html">
+            Welcome, Philipp Kunze
+          </a>
+        
+      </div>
+
+      
+        <p class="event-description">
+          Philipp Kunze joins p4MARS as a visiting researcher on an Erasmus+ exchange from TU Berlin, working on swarm localization.
+
+        </p>
+      
+
+      <div class="event-meta" data-search="TU Delft 2026-10-01 ">
+        <span class="event-date">
+          
+            October 2026
+          
+          
+        </span>
+        
+          <span class="event-sep">·</span>
+          <span class="event-venue">TU Delft</span>
+        
+      </div>
+    </div>
+    
+      
+      
+        <a href="/preview/pr-6/members/philipp-kunze.html" class="event-image" aria-label="Welcome, Philipp Kunze">
+          <img src="/preview/pr-6/images/member/p_kunze.jpg" alt="Welcome, Philipp Kunze" loading="lazy" onerror="this.src = '/preview/pr-6/images/fallback.svg'; this.onerror = null;">
+        </a>
+      
+    
+  </div>
+</div>
+
+<div class="event">
+  <div class="event-content">
+    <div class="event-text">
+      <div class="event-title-row">
+        
+          <a class="event-title" href="/preview/pr-6/members/samuel-bruin.html">
+            Welcome, Samuel Bruin
+          </a>
+        
+      </div>
+
+      
+        <p class="event-description">
+          Samuel Bruin joins p4MARS as a research assistant, working on fine-detailed 3D modeling for monitoring manufacturing processes.
+
+        </p>
+      
+
+      <div class="event-meta" data-search="TU Delft 2026-05-01 ">
+        <span class="event-date">
+          
+            May 2026
+          
+          
+        </span>
+        
+          <span class="event-sep">·</span>
+          <span class="event-venue">TU Delft</span>
+        
+      </div>
+    </div>
+    
+      
+      
+        <a href="/preview/pr-6/members/samuel-bruin.html" class="event-image" aria-label="Welcome, Samuel Bruin">
+          <img src="/preview/pr-6/images/member/s_bruin.jpg" alt="Welcome, Samuel Bruin" loading="lazy" onerror="this.src = '/preview/pr-6/images/fallback.svg'; this.onerror = null;">
+        </a>
+      
+    
+  </div>
+</div>
+
+<div class="button-wrapper">
+    <a class="button" href="/preview/pr-6/news" data-style="bare" data-flip="" aria-label="fa-solid fa-arrow-right">
+      <i class="icon fa-solid fa-arrow-right"></i>
+      
+        <span>See all news</span>
+      
+    </a>
+  </div>
+  </section>
+
+
+    </main>
+    
+
+
+<footer class="background" style="--image: url('')" data-dark="false" data-size="wide">
+  <div class="footer-about">
+    <span class="footer-title">p4MARS Lab</span>
+    
+      <span>Faculty of Aerospace Engineering, Delft University of Technology</span>
+    
+    
+      <span class="footer-muted">Kluyverweg 1, 2629 HS Delft, The Netherlands</span>
+    
+  </div>
+
+  <div>
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="mailto:r.sabzevari@tudelft.nl" data-tooltip="Email" data-style="bare" aria-label="Email">
+      <i class="icon fa-solid fa-envelope"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://github.com/p4mars" data-tooltip="GitHub" data-style="bare" aria-label="GitHub">
+      <i class="icon fa-brands fa-github"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://www.linkedin.com/in/rezasabzevari" data-tooltip="LinkedIn" data-style="bare" aria-label="LinkedIn">
+      <i class="icon fa-brands fa-linkedin"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://www.youtube.com/@p4mars" data-tooltip="YouTube" data-style="bare" aria-label="YouTube">
+      <i class="icon fa-brands fa-youtube"></i>
+      
+    </a>
+  </div>
+
+
+    
+  </div>
+
+  <div class="footer-muted">
+    © 2026
+    p4MARS Lab
+      |   Built with
+    <a href="https://github.com/greenelab/lab-website-template">
+      Lab Website Template
+    </a>
+  </div>
+
+  <input type="checkbox" class="dark-toggle" data-tooltip="Dark mode" aria-label="toggle dark mode" oninput="onDarkToggleChange(event)">
+</footer>
+
+  </body>
+</html>
