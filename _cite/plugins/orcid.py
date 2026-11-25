@@ -1,7 +1,19 @@
 import json
 from urllib.request import Request, urlopen
 from util import *
-from manubot.cite.handlers import prefix_to_handler as manubot_prefixes
+from manubot.cite.handlers import prefix_to_handler as manubot_citable
+
+# ORCID external-id types that identify one work, in order of preference.
+# Anything else (issn, isbn, scopus, wosuid, source-work-id, ...) falls through
+# to the ORCID metadata below instead of being handed to Manubot.
+ARTICLE_ID_TYPES = [
+    "doi",
+    "arxiv",
+    "pmid",
+    "pmcid",
+    "pmc",
+    "biorxiv",
+]
 
 
 def main(entry):
@@ -33,36 +45,68 @@ def main(entry):
     # list of sources to return
     sources = []
 
-    # go through response structure and pull out ids e.g. doi:1234/56789
+    # filter id by some criteria. return true to accept, false to reject.
+    def filter_id(_id):
+        # is id of certain "relationship" type
+        relationships = ["self", "version-of", "part-of"]
+        if not get_safe(_id, "external-id-relationship", "") in relationships:
+            return False
+
+        id_type = get_safe(_id, "external-id-type", "")
+
+        # is id of certain type
+        # manubot_citable covers ~5000 prefixes, including journal- and
+        # book-level ones like issn/isbn. Citing those yields the journal, not
+        # the paper, so restrict to identifiers that denote a single work.
+        if id_type not in ARTICLE_ID_TYPES:
+            return False
+
+        # is id citable by manubot
+        if id_type not in manubot_citable:
+            return False
+
+        return True
+
+    # prefer some ids over others by some criteria. return lower number to prefer more.
+    def sort_id(_id):
+        id_type = get_safe(_id, "external-id-type", "")
+        return index_of(ARTICLE_ID_TYPES, id_type)
+
+    # go through each source
     for work in response:
-        # get list of ids
+        # list of ids in source
         ids = []
+
+        # use "work-summary" field instead of top-level "external-ids" to reflect author-selected preferred sources
         for summary in get_safe(work, "work-summary", []):
             ids = ids + get_safe(summary, "external-ids.external-id", [])
 
-        # find first id of particular "relationship" type
-        _id = next(
-            (
-                id
-                for id in ids
-                if get_safe(id, "external-id-relationship", "")
-                in ["self", "version-of", "part-of"]
-            ),
-            ids[0] if len(ids) > 0 else None,
-        )
+        # filter ids by criteria
+        ids = list(filter(filter_id, ids))
+        # sort ids by criteria
+        ids.sort(key=sort_id)
 
-        if _id == None:
-            continue
+        # pick first available id
+        _id = ids[0] if len(ids) > 0 else None
 
-        # get id and id-type from response
+        # id parts
         id_type = get_safe(_id, "external-id-type", "")
         id_value = get_safe(_id, "external-id-value", "")
 
-        # create source
-        source = {"id": f"{id_type}:{id_value}"}
+        # if no available ids, skip source completely
+        # if not id_type or not id_value:
+        #     continue
 
-        # if not an id type that Manubot can cite, keep citation details
-        if id_type not in manubot_prefixes:
+        # create source
+        source = {}
+
+        # if id citable by manubot
+        if id_type and id_value and id_type in manubot_citable:
+            # id to cite with manubot
+            source = {"id": f"{id_type}:{id_value}"}
+
+        # if not citable by manubot, keep citation details from orcid
+        else:
             # get summaries
             summaries = get_safe(work, "work-summary", [])
 
@@ -78,9 +122,25 @@ def main(entry):
             # get publisher
             publisher = first(lambda s: get_safe(s, "journal-title.value", ""))
 
-            # get date
+            # get publication date, as YYYY-MM-DD with missing parts filled in.
+            # orcid reports month/day as null for many older works.
+            def published(s):
+                year = get_safe(s, "publication-date.year.value", "")
+                if not year:
+                    return None
+                month = get_safe(s, "publication-date.month.value", "") or "1"
+                day = get_safe(s, "publication-date.day.value", "") or "1"
+                try:
+                    return f"{int(year):04d}-{int(month):02d}-{int(day):02d}"
+                except ValueError:
+                    return None
+
+            # get date. prefer the actual publication date; the record
+            # timestamps below are when the orcid entry was last touched, which
+            # for most works is nowhere near when they were published.
             date = (
-                get_safe(work, "last-modified-date.value")
+                first(published)
+                or get_safe(work, "last-modified-date.value")
                 or first(lambda s: get_safe(s, "last-modified-date.value"))
                 or get_safe(work, "created-date.value")
                 or first(lambda s: get_safe(s, "created-date.value"))

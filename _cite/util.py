@@ -2,6 +2,7 @@
 utility functions for cite process and plugins
 """
 
+import re
 import subprocess
 import json
 import yaml
@@ -83,6 +84,25 @@ def get_safe(item, path, default=None):
         except (KeyError, IndexError, AttributeError, TypeError):
             return default
     return item
+
+
+def index_of(_list, value, fallback=float("inf")):
+    """
+    index of, with fallback
+    """
+
+    try:
+        return _list.index(value)
+    except ValueError:
+        return fallback
+
+
+def normalize_title(title):
+    """
+    normalize a title for comparison, ignoring case, punctuation and spacing
+    """
+
+    return re.sub(r"\W+", " ", (title or "").lower()).strip()
 
 
 def list_of_dicts(data):
@@ -179,7 +199,7 @@ def cite_with_manubot(_id):
     generate citation data for source id with Manubot
     """
 
-    # run Manubot
+    # run manubot
     try:
         commands = ["manubot", "cite", _id, "--log-level=WARNING"]
         output = subprocess.Popen(commands, stdout=subprocess.PIPE).communicate()

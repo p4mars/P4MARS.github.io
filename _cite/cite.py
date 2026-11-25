@@ -135,15 +135,15 @@ for index, source in enumerate(sources):
     # source id
     _id = get_safe(source, "id", "").strip()
 
-    # Manubot doesn't work without an id
+    # manubot doesn't work without an id
     if _id:
         log("Using Manubot to generate citation", indent=1)
 
         try:
-            # run Manubot and set citation
+            # run manubot and set citation
             citation = cite_with_manubot(_id)
 
-        # if Manubot cannot cite source
+        # if manubot cannot cite source
         except Exception as e:
             plugin = get_safe(source, "plugin", "")
             file = get_safe(source, "file", "")
@@ -151,7 +151,7 @@ for index, source in enumerate(sources):
             if plugin == "sources.py":
                 log(e, indent=3, level="ERROR")
                 errors.append(f"Manubot could not generate citation for source {_id}")
-            # otherwise, if from metasource (id retrieved from some third-party API), just warn
+            # otherwise, if from metasource (id retrieved from some third-party api), just warn
             else:
                 log(e, indent=3, level="WARNING")
                 warnings.append(
@@ -169,6 +169,37 @@ for index, source in enumerate(sources):
 
     # add new citation to list
     citations.append(citation)
+
+
+log()
+
+
+# a work can show up more than once: orcid may hold a metadata-only copy
+# alongside one with a doi, and the same work can arrive from several plugins.
+# prefer the cited copy, then the one carrying the most detail.
+def _merit(citation):
+    return (
+        1 if get_safe(citation, "id", "") else 0,
+        sum(1 for key in ("authors", "publisher", "date", "link") if citation.get(key)),
+    )
+
+
+deduped = {}
+for citation in citations:
+    key = normalize_title(get_safe(citation, "title", ""))
+    # keep untitled entries as-is, they cannot be compared
+    if not key:
+        deduped[id(citation)] = citation
+        continue
+    if key not in deduped or _merit(citation) > _merit(deduped[key]):
+        if key in deduped:
+            log(f"Discarding duplicate of {key[:60]}", indent=1, level="WARNING")
+        deduped[key] = citation
+
+removed = len(citations) - len(deduped)
+if removed:
+    log(f"Removed {removed} duplicate citation(s)", indent=1)
+citations = list(deduped.values())
 
 
 log()

@@ -13,6 +13,13 @@
   reza-sabzevari: true
   plugin: orcid.py
   file: orcid.yaml
+- title: Method for autonomous navigation of a movable robotic unit, and robotic system
+    including the robotic unit
+  date: '2022-04-01'
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
 - id: doi:10.1109/IROS45743.2020.9340805
   title: From Points to Planes - Adding Planar Constraints to Monocular SLAM Factor
     Graphs
@@ -90,6 +97,36 @@
   reza-sabzevari: true
   plugin: orcid.py
   file: orcid.yaml
+- title: 'LightPanel: Active Mobile Platform for Dense 3D Modelling'
+  publisher: arXiv preprint arXiv:1506.04904
+  date: '2015-01-01'
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: 'PHENOM: Interest Points on Photometric Normal Maps.'
+  publisher: Eurographics (Posters)
+  date: '2015-01-01'
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: 'PiMPeR: Piecewise dense 3D reconstruction from multi-view and multi-illumination
+    images'
+  publisher: arXiv preprint arXiv:1503.04598
+  date: '2015-01-01'
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: A Novel Bioinspired Nanoparticle Promotes Neurite outgrowth and Increases
+    Neural Network Activity in Primary Neuronal Cultures
+  publisher: Society for Neuroscience annual meeting, Washington, DC, USA
+  date: '2014-01-01'
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
 - id: doi:10.1109/ICRA.2014.6906585
   title: Monocular simultaneous multi-body motion segmentation and reconstruction
     from perspective views
@@ -99,6 +136,20 @@
   publisher: 2014 IEEE International Conference on Robotics and Automation (ICRA)
   date: '2014-05-01'
   link: https://doi.org/ghk3rg
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: Nanoscale Characterization of Nano-Liposome as Drug Delivery In vitro
+  publisher: Drug Discovery & Therapy World Congress (DDTWC2013)
+  date: '2013-01-01'
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: 'Combining Structure from Motion and Photometric Stereo: A Piecewise Formulation'
+  publisher: Eurographics 2012
+  date: '2012-01-01'
   orcid: 0000-0002-6309-5890
   reza-sabzevari: true
   plugin: orcid.py
@@ -143,6 +194,22 @@
   reza-sabzevari: true
   plugin: orcid.py
   file: orcid.yaml
+- title: Introducing a sensor network for advanced driver assistance systems using
+    fuzzy logic and sensor data fusion techniques
+  publisher: Ad-Hoc and Sensor Wireless Networks
+  date: '2009-01-01'
+  link: http://www.scopus.com/inward/record.url?eid=2-s2.0-78651466182&partnerID=MN8TOARS
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: Multisensor Data Fusion Strategies for Advanced Driver Assistance Systems
+  publisher: Sensor and Data Fusion
+  date: '2009-01-01'
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
 - id: doi:10.1016/j.neucom.2008.05.011
   title: Three-phase strategy for the OSD learning method in RBF neural networks
   authors:
@@ -152,6 +219,59 @@
   publisher: Neurocomputing
   date: '2009-03-01'
   link: https://doi.org/c36d7v
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: A Novel Content-Based Image Retrieval Technique Using Tree Matching
+  publisher: International Conference of Signal and Image Engineering - ICSIE'08
+  date: '2008-01-01'
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: An intelligent data mining approach using neuro-rough hybridization to discover
+    hidden knowledge from information systems
+  publisher: Journal of Information Science and Engineering
+  date: '2008-01-01'
+  link: http://www.scopus.com/inward/record.url?eid=2-s2.0-48849092525&partnerID=MN8TOARS
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: An intelligent vision system on a mobile manipulator
+  publisher: 'International Journal of Engineering, Transactions A: Basics'
+  date: '2008-01-01'
+  link: http://www.scopus.com/inward/record.url?eid=2-s2.0-67650085826&partnerID=MN8TOARS
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: Design of a new urban traffic control system using modified ant colony optimization
+    approach
+  publisher: 'Iranian Journal of Science and Technology, Transaction B: Engineering'
+  date: '2008-01-01'
+  link: http://www.scopus.com/inward/record.url?eid=2-s2.0-44249107602&partnerID=MN8TOARS
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: Employing ANFIS for Object detection in Robo-Pong
+  publisher: Proceedings of the 2008 International Conference on Artificial Intelligence,
+    ICAI 2008 and Proceedings of the 2008 International Conference on Machine Learning;
+    Models, Technologies and Applications
+  date: '2008-01-01'
+  link: http://www.scopus.com/inward/record.url?eid=2-s2.0-62749199790&partnerID=MN8TOARS
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: Enhancement in Two-Phase OSD learning method for RBF Neural Networks
+  publisher: Proceedings of the 2008 International Conference on Artificial Intelligence,
+    ICAI 2008 and Proceedings of the 2008 International Conference on Machine Learning;
+    Models, Technologies and Applications
+  date: '2008-01-01'
+  link: http://www.scopus.com/inward/record.url?eid=2-s2.0-62749137173&partnerID=MN8TOARS
   orcid: 0000-0002-6309-5890
   reza-sabzevari: true
   plugin: orcid.py
@@ -185,6 +305,14 @@
   reza-sabzevari: true
   plugin: orcid.py
   file: orcid.yaml
+- title: A Vision System Based on Neural Network for a Mobile Robot and Statistical
+    Analyses of Its Errors
+  publisher: 12th International CSI Computer Conference (CSICC'07)
+  date: '2007-01-01'
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
 - id: doi:10.1016/j.neucom.2007.08.002
   title: Improvement of learning algorithms for RBF neural networks in a helicopter
     sound identification system
@@ -195,6 +323,30 @@
   publisher: Neurocomputing
   date: '2007-12-01'
   link: https://doi.org/c7f22d
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: Intelligent parameter reduction using rough sets theory and sensitivity analysis
+  publisher: WSEAS Transactions on Systems
+  date: '2007-01-01'
+  link: http://www.scopus.com/inward/record.url?eid=2-s2.0-33847743387&partnerID=MN8TOARS
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: Expert clustering of hydraulic-geotechnical control parameters of rubble
+    mound breakwaters using rough sets theory
+  publisher: International Conference on Computational Intelligence, Man-Machine Systems
+    and Cybernetics - Proceedings
+  date: '2006-01-01'
+  link: http://www.scopus.com/inward/record.url?eid=2-s2.0-48849097688&partnerID=MN8TOARS
+  orcid: 0000-0002-6309-5890
+  reza-sabzevari: true
+  plugin: orcid.py
+  file: orcid.yaml
+- title: Intelligent Parameter Reduction Using Rough Sets Theory and Sensitivity
+  date: '2022-12-31'
   orcid: 0000-0002-6309-5890
   reza-sabzevari: true
   plugin: orcid.py
