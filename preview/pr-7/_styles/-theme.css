@@ -1,0 +1,49 @@
+[data-dark=false] {
+  --primary: #0369a1;
+  --secondary: #bae6fd;
+  --accent: #38bdf8;
+  --text: #0b1220;
+  --background: #ffffff;
+  --background-alt: #f3f6fa;
+  --light-gray: #dfe5ec;
+  --gray: #5b6675;
+  --dark-gray: #2d3643;
+  --overlay: #0b122014;
+}
+
+[data-dark=true] {
+  --primary: #38bdf8;
+  --secondary: #0c4a6e;
+  --accent: #7dd3fc;
+  --text: #e6edf5;
+  --background: #0a0f1c;
+  --background-alt: #0e1526;
+  --light-gray: #233047;
+  --gray: #8a97a8;
+  --dark-gray: #c3ccd8;
+  --overlay: #00000060;
+}
+
+:root {
+  --space: #05080f;
+  --space-alt: #0b1a2e;
+  --glow: #38bdf8;
+  --title: "Plus Jakarta Sans", sans-serif;
+  --heading: "Plus Jakarta Sans", sans-serif;
+  --body: "Inter", sans-serif;
+  --code: "JetBrains Mono", monospace;
+  --large: 1.2rem;
+  --xl: 1.4rem;
+  --xxl: 1.6rem;
+  --thin: 300;
+  --regular: 400;
+  --semi-bold: 600;
+  --bold: 700;
+  --spacing: 2;
+  --compact: 1.6;
+  --rounded: 10px;
+  --shadow: 0 1px 2px var(--overlay), 0 8px 24px var(--overlay);
+  --transition: 0.2s ease;
+}
+
+/*# sourceMappingURL=-theme.css.map */
