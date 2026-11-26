@@ -66,7 +66,10 @@
 
 {%- assign canonical = page.url | replace: "/index.html", "/" | absolute_url -%}
 {%- assign home = "/" | absolute_url -%}
-{%- assign icon = "images/logo.png" | relative_url -%}
+{%- assign icon_ico = "favicon.ico" | relative_url -%}
+{%- assign icon_svg = "images/icon.svg" | relative_url -%}
+{%- assign icon_png = "images/icon/icon-192.png" | relative_url -%}
+{%- assign icon_touch = "images/icon/icon-192.png" | relative_url -%}
 {%- assign logo = "images/logo.png" | absolute_url -%}
 {%- assign share = page.share_image | default: "images/share.png" | absolute_url -%}
 {%- assign published = page.date | date_to_xmlschema -%}
@@ -78,7 +81,10 @@
 <title>{{ fulltitle | escape_once }}</title>
 <meta name="description" content="{{ description | escape_once }}">
 <link rel="canonical" href="{{ canonical }}">
-<link rel="icon" href="{{ icon }}">
+<link rel="icon" href="{{ icon_ico }}" sizes="any">
+<link rel="icon" type="image/svg+xml" href="{{ icon_svg }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ icon_png }}">
+<link rel="apple-touch-icon" href="{{ icon_touch }}">
 <link rel="alternate" type="application/rss+xml" title="{{ site.title | xml_escape }}" href="{{ feed }}">
 
 <meta property="og:site_name" content="{{ site.title | xml_escape }}">
